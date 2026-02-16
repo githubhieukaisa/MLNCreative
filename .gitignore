@@ -1,0 +1,21 @@
+# Bỏ qua tất cả mọi thứ
+*
+
+# ✅ Giữ thư mục .gitignore
+!.gitignore
+
+# Giữ lại cấu hình Project (Layers, Tags, Build Settings...) -> Sửa lỗi mất Layer
+!ProjectSettings/
+!ProjectSettings/**
+
+# Giữ lại danh sách Packages (Để Unity biết cần tải thư viện gì) -> Sửa lỗi mất code thư viện
+!Packages/
+!Packages/**
+
+# ✅ Giữ lại thư mục Assets và hai thư mục con cần thiết
+!Assets/
+!Assets/**
+
+# Giữ lại các file words
+!"cốt truyện.docx"
+!"plan.docx"
