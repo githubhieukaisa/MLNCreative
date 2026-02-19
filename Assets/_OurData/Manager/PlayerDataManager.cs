@@ -20,7 +20,7 @@ public class PlayerDataManager : TeamBehaviour
 
     protected override void ResetValue()
     {
-        SetStat(StatType.Capital, 100);
+        SetStat(StatType.Capital, 5000000);
         SetStat(StatType.Brand, 50);
         SetStat(StatType.Tech, 10);
     }

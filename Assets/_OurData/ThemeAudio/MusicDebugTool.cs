@@ -14,7 +14,7 @@ namespace Core.Audio
             // Nếu bật chế độ test pollution thì update liên tục
             if (_autoApplyPollution && AudioManager.Instance != null)
             {
-                AudioManager.Instance.UpdateMusicEffect(testPollution);
+                // AudioManager.Instance.UpdateMusicEffect(testPollution);
             }
         }
 
@@ -41,13 +41,13 @@ namespace Core.Audio
 
             if (GUILayout.Button("2. Play Normal Gameplay"))
             {
-                AudioManager.Instance.PlayMusic(MusicType.NormalGameplay);
+                AudioManager.Instance.PlayMusic(MusicType.Gameplay);
                 _autoApplyPollution = true; // Tự động bật test effect
             }
 
             if (GUILayout.Button("3. Play Polluted Gameplay"))
             {
-                AudioManager.Instance.PlayMusic(MusicType.PollutedGameplay);
+                AudioManager.Instance.PlayMusic(MusicType.Crisis);
             }
 
             if (GUILayout.Button("4. Play Victory"))
@@ -57,7 +57,7 @@ namespace Core.Audio
 
             if (GUILayout.Button("5. Play Game Over"))
             {
-                AudioManager.Instance.PlayMusic(MusicType.GameOver);
+                AudioManager.Instance.PlayMusic(MusicType.Defeat);
             }
 
             if (GUILayout.Button("Stop Music (None)"))

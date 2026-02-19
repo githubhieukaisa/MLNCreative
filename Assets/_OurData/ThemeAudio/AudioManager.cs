@@ -8,24 +8,25 @@ namespace Core.Audio
     {
         public static AudioManager Instance { get; private set; }
 
-        [Header("Configuration")]
+        [Header("Databases")]
         [SerializeField] private MusicDatabaseSO _musicDatabase;
-        [SerializeField] private float _crossFadeDuration = 2.0f;
+        [SerializeField] private SFXDatabaseSO _sfxDatabase;
 
-        [Header("Debug")]
-        [SerializeField] private AudioSource _primarySource;
-        [SerializeField] private AudioSource _secondarySource;
+        [Header("Settings")]
+        [SerializeField] private float _crossFadeDuration = 1.5f;
 
-        [Header("Effect Configuration")]
-        [SerializeField] private AudioLowPassFilter _musicLowPassFilter;
-        [SerializeField] private float _normalPitch = 1.0f;
-        [SerializeField] private float _dampenedPitch = 0.8f;
-        [SerializeField] private float _normalCutoff = 22000f;
-        [SerializeField] private float _dampenedCutoff = 800f;
+        [Header("Audio Sources (Auto-Generated)")]
+        [SerializeField] private AudioSource _musicSourcePrimary;   // Music A
+        [SerializeField] private AudioSource _musicSourceSecondary; // Music B (Crossfade)
+        [SerializeField] private AudioSource _sfxSource;            // SFX riêng
 
-        private bool _isPrimaryPlaying = true;
+        [Header("Crisis Effect (Low Pass Filter)")]
+        [SerializeField] private AudioLowPassFilter _lowPassFilter;
+        [SerializeField] private float _normalCutoff = 22000f;   // Âm thanh trong trẻo
+        [SerializeField] private float _crisisCutoff = 800f;     // Âm thanh bị nghẹt (muffled)
+
+        private bool _isPrimaryMusicActive = true;
         private Coroutine _fadeCoroutine;
-        //Ở đây tôi giữ Enum MusicType nhưng bạn phải định nghĩa nó ở file riêng.
         private MusicType _currentMusicType = MusicType.None;
 
         protected override void Awake()
@@ -35,7 +36,10 @@ namespace Core.Audio
             {
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
-                _musicDatabase.Initialize();
+
+                // Init database ngay lập tức
+                _musicDatabase?.Initialize();
+                _sfxDatabase?.Initialize();
             }
             else
             {
@@ -43,138 +47,139 @@ namespace Core.Audio
             }
         }
 
+        // Tự động tìm hoặc tạo AudioSource khi Reset hoặc chạy
         protected override void LoadComponents()
         {
             base.LoadComponents();
 
-            AudioSource[] sources = GetComponents<AudioSource>();
+            var sources = GetComponents<AudioSource>();
 
-            if (sources.Length >= 1) _primarySource = sources[0];
-            else _primarySource = gameObject.AddComponent<AudioSource>();
+            // Đảm bảo đủ 3 source: 2 cho Music (để fade qua lại), 1 cho SFX
+            _musicSourcePrimary = sources.Length > 0 ? sources[0] : gameObject.AddComponent<AudioSource>();
+            _musicSourceSecondary = sources.Length > 1 ? sources[1] : gameObject.AddComponent<AudioSource>();
+            _sfxSource = sources.Length > 2 ? sources[2] : gameObject.AddComponent<AudioSource>();
 
-            if (sources.Length >= 2) _secondarySource = sources[1];
-            else _secondarySource = gameObject.AddComponent<AudioSource>();
-
-            if (_musicLowPassFilter == null)
+            if (_lowPassFilter == null)
             {
-                _musicLowPassFilter = transform.GetComponent<AudioLowPassFilter>();
-                _musicLowPassFilter.cutoffFrequency = _normalCutoff;
+                _lowPassFilter = GetComponent<AudioLowPassFilter>() ?? gameObject.AddComponent<AudioLowPassFilter>();
             }
 
-            SetupSource(_primarySource);
-            SetupSource(_secondarySource);
+            SetupMusicSource(_musicSourcePrimary);
+            SetupMusicSource(_musicSourceSecondary);
+            SetupSFXSource(_sfxSource);
         }
 
-        // Override từ TeamBehaviour: Reset giá trị mặc định
-        protected override void ResetValue()
-        {
-            base.ResetValue();
-            if (_primarySource != null) _primarySource.volume = 0;
-            if (_secondarySource != null) _secondarySource.volume = 0;
-        }
-
-        private void SetupSource(AudioSource source)
+        private void SetupMusicSource(AudioSource source)
         {
             source.loop = true;
             source.playOnAwake = false;
-            source.spatialBlend = 0f;
             source.volume = 0f;
+            source.spatialBlend = 0f; // 2D Sound
         }
 
+        private void SetupSFXSource(AudioSource source)
+        {
+            source.loop = false;
+            source.playOnAwake = false;
+            source.volume = 1f;
+            source.spatialBlend = 0f;
+        }
+
+        protected override void ResetValue()
+        {
+            base.ResetValue();
+            if (_lowPassFilter != null) _lowPassFilter.cutoffFrequency = _normalCutoff;
+        }
+
+        // ================= PUBLIC API =================
+
+        /// <summary>
+        /// Phát nhạc nền với hiệu ứng Crossfade mượt mà
+        /// </summary>
         public void PlayMusic(MusicType type)
         {
             if (_currentMusicType == type) return;
-            if (_musicDatabase == null)
-            {
-                Debug.LogWarning("AudioManager: Missing MusicDatabaseSO!");
-                return;
-            }
 
-            AudioClip nextClip = _musicDatabase.GetClip(type, out float volumeScale);
-            if (nextClip == null) return;
+            // volScale ở đây là float, nó sẽ luôn có giá trị (mặc định là 1f từ DatabaseSO)
+            float volScale = 1f;
+            var clip = _musicDatabase?.GetClip(type, out volScale);
+
+            if (clip == null && type != MusicType.None) return;
 
             _currentMusicType = type;
 
-            AudioSource currentSource = _isPrimaryPlaying ? _primarySource : _secondarySource;
-            if (currentSource.clip == nextClip && currentSource.isPlaying) return;
-
             if (_fadeCoroutine != null) StopCoroutine(_fadeCoroutine);
-            _fadeCoroutine = StartCoroutine(CrossFadeMusic(nextClip, volumeScale));
+
+            // Bỏ đoạn "?? 1f" đi vì volScale chắc chắn có giá trị float
+            _fadeCoroutine = StartCoroutine(CrossFadeRoutine(clip, volScale));
         }
 
-        public void SetMusicDampening(float intensity)
+        /// <summary>
+        /// Phát tiếng động (có thể chồng đè nhiều tiếng cùng lúc)
+        /// </summary>
+        public void PlaySFX(SFXType type)
         {
-            if (_primarySource == null) return;
+            if (_sfxDatabase == null) return;
 
-            intensity = Mathf.Clamp01(intensity);
-
-            float targetPitch = Mathf.Lerp(_normalPitch, _dampenedPitch, intensity);
-            float targetCutoff = Mathf.Lerp(_normalCutoff, _dampenedCutoff, intensity);
-
-            // Apply cho cả 2 nguồn để khi crossfade không bị lệch
-            _primarySource.pitch = targetPitch;
-            _secondarySource.pitch = targetPitch;
-
-            if (_musicLowPassFilter != null)
+            var clip = _sfxDatabase.GetClip(type, out float volScale);
+            if (clip != null)
             {
-                _musicLowPassFilter.cutoffFrequency = targetCutoff;
+                _sfxSource.PlayOneShot(clip, volScale);
             }
         }
 
-        private IEnumerator CrossFadeMusic(AudioClip newClip, float targetVolume)
+        /// <summary>
+        /// Hiệu ứng "Khủng hoảng".
+        /// intensity: 0 = Bình thường, 1 = Căng thẳng cực độ (nghẹt tiếng).
+        /// </summary>
+        public void SetStressLevel(float intensity)
         {
-            AudioSource activeSource = _isPrimaryPlaying ? _primarySource : _secondarySource;
-            AudioSource newSource = _isPrimaryPlaying ? _secondarySource : _primarySource;
+            if (_lowPassFilter == null) return;
 
-            // Setup new source
-            newSource.clip = newClip;
-            newSource.volume = 0;
-            newSource.Play();
+            intensity = Mathf.Clamp01(intensity);
+
+            // Lerp từ Normal (22000Hz) xuống Crisis (800Hz)
+            float targetCutoff = Mathf.Lerp(_normalCutoff, _crisisCutoff, intensity);
+
+            _lowPassFilter.cutoffFrequency = targetCutoff;
+        }
+
+        // ================= INTERNAL LOGIC =================
+
+        private IEnumerator CrossFadeRoutine(AudioClip nextClip, float targetVol)
+        {
+            var activeSource = _isPrimaryMusicActive ? _musicSourcePrimary : _musicSourceSecondary;
+            var nextSource = _isPrimaryMusicActive ? _musicSourceSecondary : _musicSourcePrimary;
+
+            // Prepare next source
+            nextSource.clip = nextClip;
+            nextSource.volume = 0;
+            if (nextClip != null) nextSource.Play();
 
             float timer = 0f;
-            float startVolume = activeSource.volume;
+            float startVol = activeSource.volume;
 
             while (timer < _crossFadeDuration)
             {
                 timer += Time.unscaledDeltaTime;
                 float t = timer / _crossFadeDuration;
 
-                // Fade In New Source
-                newSource.volume = Mathf.Lerp(0, targetVolume, t);
+                // Fade In Next
+                if (nextClip != null) nextSource.volume = Mathf.Lerp(0, targetVol, t);
 
-                // Fade Out Old Source
-                if (activeSource.isPlaying)
-                {
-                    activeSource.volume = Mathf.Lerp(startVolume, 0, t);
-                }
+                // Fade Out Active
+                if (activeSource.isPlaying) activeSource.volume = Mathf.Lerp(startVol, 0, t);
 
                 yield return null;
             }
 
             activeSource.Stop();
             activeSource.volume = 0;
-            newSource.volume = targetVolume;
 
-            // Swap active flag
-            _isPrimaryPlaying = !_isPrimaryPlaying;
-        }
+            // Ensure final volume is precise
+            if (nextClip != null) nextSource.volume = targetVol;
 
-        public void UpdateMusicEffect(float pollutionPercent)
-        {
-            // Chỉ áp dụng khi đang chơi Normal Gameplay
-            if (_primarySource == null) return;
-
-            // Lerp các giá trị dựa theo % ô nhiễm (0 -> 1)
-            // Càng ô nhiễm, nhạc càng trầm và đục
-            float targetPitch = Mathf.Lerp(_normalPitch, _dampenedPitch, pollutionPercent);
-            float targetCutoff = Mathf.Lerp(_normalCutoff, _dampenedCutoff, pollutionPercent);
-
-            _primarySource.pitch = targetPitch;
-
-            if (_musicLowPassFilter != null)
-            {
-                _musicLowPassFilter.cutoffFrequency = targetCutoff;
-            }
+            _isPrimaryMusicActive = !_isPrimaryMusicActive;
         }
     }
 }

@@ -7,140 +7,141 @@ using UnityEngine.UI;
 
 public class DialogueManager : TeamBehaviour
 {
-    public static DialogueManager Instance;
+    public static DialogueManager Instance { get; private set; }
 
-    [Header("Dialogue Manager")]
-    public Image characterIcon;
-    public TextMeshProUGUI characterName;
-    public TextMeshProUGUI dialogueArea;
+    [Header("UI References")]
+    [SerializeField] private Image _characterIcon;
+    [SerializeField] private TextMeshProUGUI _characterNameText;
+    [SerializeField] private TextMeshProUGUI _dialogueText;
+    [SerializeField] private GameObject _dialoguePanel;
 
-    private Queue<DialogueLine> lines = new Queue<DialogueLine>();
+    [Header("Settings")]
+    [SerializeField] private float _typingSpeed = 0.02f;
+    [SerializeField] private AudioSource _audioSource;
 
-    public bool isDialogueActive = false;
-    public float typingSpeed = 0.02f;
-    public bool isTyping = false;
-    public string currentSentence = "";
-
-    public Animator animator;
-    [SerializeField] private Action onDialogueEndedCallback;
+    // Runtime State
+    public bool IsActive { get; private set; } = false; // Public read-only để Trigger kiểm tra
+    private Queue<DialogueLine> _linesQueue = new();
+    private bool _isTyping = false;
+    private string _currentFullSentence = "";
+    private Action _onDialogueEndedCallback;
 
     protected override void Awake()
     {
         base.Awake();
         if (Instance == null) Instance = this;
-        else Destroy(this.gameObject);
-        this.animator.Play("Hide");
+        else Destroy(gameObject);
+
+        if (_dialoguePanel) _dialoguePanel.SetActive(false);
     }
 
+    // Nếu dùng TeamBehaviour thì giữ, nếu dùng MonoBehaviour thì xóa override
     protected override void LoadComponents()
     {
-        base.LoadComponents();
-        this.LoadAnimator();
-        this.LoadCharacterIcon();
-        this.LoadCharacterName();
-        this.LoadDialogueArea();
+        if (!_audioSource) _audioSource = GetComponent<AudioSource>();
     }
 
-    protected virtual void LoadAnimator()
+    // --- INPUT HANDLING (MỚI) ---
+    private void Update()
     {
-        if (this.animator != null) return;
-        this.animator = GetComponent<Animator>();
-        Debug.Log(this.transform.name + ": LoadAnimator");
-    }
+        // Chỉ lắng nghe khi hội thoại đang bật
+        if (!IsActive) return;
 
-    protected virtual void LoadCharacterIcon()
-    {
-        if (this.characterIcon != null) return;
-        this.characterIcon = transform.Find("AvatarIcon").GetComponent<Image>();
-        Debug.Log(this.transform.name + ": LoadCharacterIcon");
-    }
-
-    protected virtual void LoadCharacterName()
-    {
-        if (this.characterName != null) return;
-        this.characterName = transform.Find("Header").GetChild(0).GetComponent<TextMeshProUGUI>();
-        Debug.Log(this.transform.name + ": LoadCharacterName");
-    }
-
-    protected virtual void LoadDialogueArea()
-    {
-        if (this.dialogueArea != null) return;
-        this.dialogueArea = transform.Find("Body").GetChild(0).GetComponent<TextMeshProUGUI>();
-        Debug.Log(this.transform.name + ": LoadDialogueArea");
-    }
-
-    public void StartDialogue(Dialogue dialogue, Action onEnded = null)
-    {
-        this.isDialogueActive = true;
-        this.animator.Play("Show");
-        this.lines.Clear();
-
-        this.onDialogueEndedCallback = onEnded;
-
-        foreach (DialogueLine dialogueLine in dialogue.dialogueLines)
+        // Bấm chuột trái, Space, hoặc Enter để next
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
         {
-            this.lines.Enqueue(dialogueLine);
+            OnNextAndInteraction();
+        }
+    }
+
+    public void StartDialogue(DialogueData data, Action onEnded = null)
+    {
+        if (IsActive) return; // Chặn spam
+
+        IsActive = true;
+        _onDialogueEndedCallback = onEnded;
+        _linesQueue.Clear();
+
+        foreach (var line in data.lines)
+        {
+            _linesQueue.Enqueue(line);
         }
 
-        this.DisplayNextDialogueLine();
+        if (_dialoguePanel) _dialoguePanel.SetActive(true);
+
+        DisplayNextLine();
     }
 
-    public void DisplayNextDialogueLine()
+    public void OnNextAndInteraction()
     {
-        if (isTyping)
+        DisplayNextLine();
+    }
+
+    private void DisplayNextLine()
+    {
+        if (_isTyping)
         {
             StopAllCoroutines();
-            this.dialogueArea.text = currentSentence; // Hiển thị full text
-            isTyping = false; // Đánh dấu là đã gõ xong
-            return; // Thoát hàm, không load câu tiếp theo
-        }
-
-        if (this.lines.Count == 0)
-        {
-            this.EndDialogue();
+            _dialogueText.text = _currentFullSentence;
+            _isTyping = false;
             return;
         }
 
-        DialogueLine currentLine = this.lines.Dequeue();
-        this.characterIcon.sprite = currentLine.character.icon;
-        this.characterName.text = currentLine.character.name;
+        if (_linesQueue.Count == 0)
+        {
+            EndDialogue();
+            return;
+        }
 
-        this.currentSentence = currentLine.line;
+        DialogueLine currentLine = _linesQueue.Dequeue();
+
+        if (currentLine.speaker != null)
+        {
+            _characterNameText.text = currentLine.speaker.characterName;
+            _characterIcon.sprite = currentLine.speaker.defaultIcon;
+
+            AudioClip clipToPlay = currentLine.voiceClipOverride != null
+                ? currentLine.voiceClipOverride
+                : currentLine.speaker.defaultVoice;
+
+            PlayAudio(clipToPlay);
+        }
+
+        _currentFullSentence = currentLine.content;
 
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(currentLine));
+        StartCoroutine(TypeSentence(currentLine.content));
     }
 
-    IEnumerator TypeSentence(DialogueLine dialogueLine)
+    private IEnumerator TypeSentence(string sentence)
     {
-        this.isTyping = true;
-        this.dialogueArea.text = "";
-        foreach (char letter in dialogueLine.line.ToCharArray())
+        _isTyping = true;
+        _dialogueText.text = "";
+
+        foreach (char letter in sentence.ToCharArray())
         {
-            this.dialogueArea.text += letter;
-            yield return new WaitForSeconds(this.typingSpeed);
+            _dialogueText.text += letter;
+            yield return new WaitForSeconds(_typingSpeed);
         }
-        this.isTyping = false;
+
+        _isTyping = false;
     }
 
-    public void EndDialogue()
+    private void PlayAudio(AudioClip clip)
     {
-        this.isDialogueActive = false;
-        this.animator.Play("Hide");
-
-        this.onDialogueEndedCallback?.Invoke();
-        this.onDialogueEndedCallback = null;
+        if (clip && _audioSource)
+        {
+            _audioSource.Stop();
+            _audioSource.PlayOneShot(clip);
+        }
     }
 
-    private void Update()
+    private void EndDialogue()
     {
-        this.HandleNextDialogue();
-    }
+        IsActive = false;
+        if (_dialoguePanel) _dialoguePanel.SetActive(false);
 
-    public void HandleNextDialogue()
-    {
-        if (!Input.GetKeyDown(KeyCode.Z) && !Input.GetKeyDown(KeyCode.KeypadEnter) && !Input.GetKeyDown(KeyCode.X) || !this.isDialogueActive) return;
-
-        this.DisplayNextDialogueLine();
+        _onDialogueEndedCallback?.Invoke();
+        _onDialogueEndedCallback = null;
     }
 }

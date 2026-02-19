@@ -3,23 +3,24 @@ using System.Collections.Generic;
 
 namespace Core.Audio
 {
-    [CreateAssetMenu(fileName = "MusicDatabase", menuName = "EcoFactory/Audio/MusicDatabase")]
-    public class MusicDatabaseSO : ScriptableObject
+    public abstract class AudioLibrarySO<T> : ScriptableObject where T : System.Enum
     {
         [System.Serializable]
-        public struct MusicTrack
+        public struct AudioTrack
         {
-            public MusicType type;
+            public T type;
             public AudioClip clip;
-            [Range(0f, 1f)] public float volumeScale; // Dùng để cân bằng âm lượng từng bài
+            [Range(0f, 1f)] public float volumeScale; // Cân bằng âm lượng từng file
         }
 
-        [SerializeField] private List<MusicTrack> _tracks;
-        private Dictionary<MusicType, MusicTrack> _trackDict;
+        [SerializeField] protected List<AudioTrack> _tracks;
 
-        public void Initialize()
+        // Dictionary để tra cứu nhanh O(1) thay vì duyệt List O(n)
+        protected Dictionary<T, AudioTrack> _trackDict;
+
+        public virtual void Initialize()
         {
-            _trackDict = new Dictionary<MusicType, MusicTrack>();
+            _trackDict = new Dictionary<T, AudioTrack>();
             foreach (var track in _tracks)
             {
                 if (!_trackDict.ContainsKey(track.type))
@@ -29,11 +30,11 @@ namespace Core.Audio
             }
         }
 
-        public AudioClip GetClip(MusicType type, out float volumeScale)
+        public AudioClip GetClip(T type, out float volumeScale)
         {
             if (_trackDict == null) Initialize();
 
-            if (_trackDict.TryGetValue(type, out MusicTrack track))
+            if (_trackDict.TryGetValue(type, out AudioTrack track))
             {
                 volumeScale = track.volumeScale;
                 return track.clip;
@@ -43,4 +44,12 @@ namespace Core.Audio
             return null;
         }
     }
+
+    // Định nghĩa MusicDatabase (Tạo trong Editor)
+    [CreateAssetMenu(fileName = "MusicDatabase", menuName = "KinhTeChinhTri/Audio/MusicDatabase")]
+    public class MusicDatabaseSO : AudioLibrarySO<MusicType> { }
+
+    // Định nghĩa SFXDatabase (Tạo trong Editor)
+    [CreateAssetMenu(fileName = "SFXDatabase", menuName = "KinhTeChinhTri/Audio/SFXDatabase")]
+    public class SFXDatabaseSO : AudioLibrarySO<SFXType> { }
 }

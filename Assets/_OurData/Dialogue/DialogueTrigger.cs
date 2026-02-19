@@ -3,28 +3,24 @@ using UnityEngine.Events;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public Dialogue dialogue;
-    public UnityEvent onDialogueEndEvent;
-    private bool hasTriggered = false;
+    [Header("Data")]
+    [SerializeField] private DialogueData _conversationData;
+
+    [Header("Events")]
+    public UnityEvent OnDialogueEnd;
+
+    private bool _isPlayerInRange;
 
     public void TriggerDialogue()
     {
-        if(dialogue == null) return;
-        DialogueManager.Instance.StartDialogue(dialogue, TriggerEvent);
-        hasTriggered = true;
+        // Chặn nếu chưa gán Data hoặc Đang có hội thoại khác diễn ra
+        if (_conversationData == null || DialogueManager.Instance.IsActive) return;
+
+        DialogueManager.Instance.StartDialogue(_conversationData, OnDialogueFinish);
     }
 
-    private void TriggerEvent() 
+    private void OnDialogueFinish()
     {
-        onDialogueEndEvent?.Invoke();
-        hasTriggered = false;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            this.TriggerDialogue();
-        }
+        OnDialogueEnd?.Invoke();
     }
 }
