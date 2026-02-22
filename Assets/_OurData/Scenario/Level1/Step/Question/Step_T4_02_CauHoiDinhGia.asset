@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea60b411c9a18c4980249e287142770, type: 3}
+  m_Name: Step_T4_02_CauHoiDinhGia
+  m_EditorClassIdentifier: Assembly-CSharp::QuestionStep
+  questionText: "Hao ph\xED s\u1EE9c lao \u0111\u1ED9ng (th\u1EDDi gian) c\u1EE7a
+    b\u1EA1n \u0111ang cao h\u01A1n m\u1EB7t b\u1EB1ng chung. B\u1EA1n \u0111\u1ECBnh
+    gi\xE1 th\u1EBF n\xE0o?"
+  optionA:
+    text: "B\xE1n 30k/\u1ED5. \"Em l\xE0m r\u1EA5t c\u1EF1c kh\u1ED5, t\u1ED1n m\u1ED3
+      h\xF4i h\u01A1n ng\u01B0\u1EDDi ta n\xEAn gi\xE1 ph\u1EA3i cao!"
+    capitalChange: -1000000
+    brandChange: -10
+    techChange: 10
+    feedback: "\u1EBE ch\u1ECFng ch\u01A1! Sinh vi\xEAn nh\xECn gi\xE1 30k xong quay
+      xe sang h\xE0ng \u0111\u1ED1i di\u1EC7n. B\u1EA1n ng\u1ED3i \u0111u\u1ED5i
+      ru\u1ED3i v\xE0 t\u1EF1 \u0103n b\xE1nh m\xEC thay c\u01A1m."
+    nextBranch: {fileID: 11400000, guid: 6ddc20271d0a47745895a4cd59c4f22f, type: 2}
+  optionB:
+    text: "B\xE1n 15k/\u1ED5, ch\u1EA5p nh\u1EADn b\xE1n b\u1EB1ng gi\xE1 m\u1EB7t
+      b\u1EB1ng chung tr\u01B0\u1EDBc c\u1ED5ng tr\u01B0\u1EDDng."
+    capitalChange: 1500000
+    brandChange: 20
+    techChange: 5
+    feedback: "Kh\xE1ch mua \u1ED5n \u0111\u1ECBnh! D\xF9 l\xE3i tr\xEAn m\u1ED7i
+      \u1ED5 kh\xF4ng cao v\xEC b\u1EA1n thao t\xE1c ch\u1EADm, nh\u01B0ng b\xF9
+      l\u1EA1i b\xE1n \u0111\u01B0\u1EE3c s\u1ED1 l\u01B0\u1EE3ng l\u1EDBn, doanh
+      thu ng\xE0y \u0111\u1EA7u r\u1EA5t kh\u1EA3 quan."
+    nextBranch: {fileID: 0}
+  optionC:
+    text: "B\xE1n ph\xE1 gi\xE1 5k/\u1ED5. L\u1ED7 c\u0169ng \u0111\u01B0\u1EE3c,
+      mi\u1EC5n l\xE0 ti\xEAu di\u1EC7t c\xE1c h\xE0ng b\xE1nh m\xEC xung quanh."
+    capitalChange: -2000000
+    brandChange: 40
+    techChange: 0
+    feedback: "B\xE1n s\u1EA1ch s\xE0nh sanh trong 30 ph\xFAt! Sinh vi\xEAn b\xE2u
+      v\xE0o nh\u01B0 ki\u1EBFn v\xE0 tung h\xF4 b\u1EA1n l\xE0 'B\u1ED3 t\xE1t s\u1ED1ng'.
+      Nh\u01B0ng khi \u0111\u1EBFm ti\u1EC1n..."
+    nextBranch: {fileID: 11400000, guid: b1e208df31e4f0841bceba2c77561788, type: 2}
