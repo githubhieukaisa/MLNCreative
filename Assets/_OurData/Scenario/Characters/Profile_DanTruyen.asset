@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 083cdb8ea8a6dd140b235e02f66b5a20, type: 3}
-  m_Name: Profile_Introduction
+  m_Name: Profile_DanTruyen
   m_EditorClassIdentifier: Assembly-CSharp::CharacterProfileSO
   characterName: "D\u1EABn chuy\u1EC7n"
   defaultIcon: {fileID: 351442296876036483, guid: 973c62ac9210e0a4dbf00a169b55e5e4, type: 3}

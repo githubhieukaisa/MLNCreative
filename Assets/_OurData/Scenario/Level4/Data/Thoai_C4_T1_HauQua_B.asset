@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2eab4a3faaa6134d89cbb71d1d5a509, type: 3}
+  m_Name: Thoai_C4_T1_HauQua_B
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speaker: {fileID: 11400000, guid: c5049c5e0ff317d459948ede9e91b663, type: 2}
+    content: "Kaka, mua thanh l\xFD \u0111\u01B0\u1EE3c m\u1EA5y c\xE1i m\xE1y t\xEDnh
+      ti\u1EC1n t\u1EEB \u0111\u1EDDi T\u1ED1ng gi\xE1 c\xF3 1 tri\u1EC7u/c\xE1i.
+      V\u1EABn b\u1EA5m t\xEDt t\xEDt \u0111\u01B0\u1EE3c l\xE0 ngon r\u1ED3i!"
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: -7809819526224066742, guid: c12a007151a863b4ea81c6a895c447cd, type: 3}
+      CharacterSprite: {fileID: -1893889144324857684, guid: 79c1c58c456c35b4590d565860e073ff, type: 3}
+      CharacterAnimTrigger: 
+  - speaker: {fileID: 11400000, guid: 2f64cf74fb297b24fbcfa21c4ebf3104, type: 2}
+    content: "T\xEDt... r\xE8 r\xE8... M\xE0n h\xECnh xanh l\xE8 hi\u1EC7n l\xEAn.
+      \u1ED4 c\u1EE9ng m\xE1y t\xEDnh ch\xE1y kh\xE9t ngay gi\u1EEFa gi\u1EDD cao
+      \u0111i\u1EC3m. To\xE0n b\u1ED9 d\u1EEF li\u1EC7u doanh thu trong ng\xE0y bi\u1EBFn
+      m\u1EA5t s\u1EA1ch s\u1EBD."
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 0}
+      CharacterSprite: {fileID: 7566863766233733025, guid: 119caf2d917709c4e8558ba73d0b7902, type: 3}
+      CharacterAnimTrigger: Glitch

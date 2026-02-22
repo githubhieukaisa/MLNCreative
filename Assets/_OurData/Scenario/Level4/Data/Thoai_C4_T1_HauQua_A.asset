@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2eab4a3faaa6134d89cbb71d1d5a509, type: 3}
+  m_Name: Thoai_C4_T1_HauQua_A
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speaker: {fileID: 11400000, guid: 2f64cf74fb297b24fbcfa21c4ebf3104, type: 2}
+    content: "B\u1EA1n quy\u1EBFt \u0111\u1ECBnh gi\u1EEF nguy\xEAn c\xE1ch l\xE0m
+      th\u1EE7 c\xF4ng. K\u1EBFt qu\u1EA3: Kh\xE1ch T\xE2y kh\xF4ng bi\u1EBFt ti\u1EBFng
+      Vi\u1EC7t, \u0111\u1EE9ng \u0111\u1EE3i th\u1ED1i ti\u1EC1n l\u1EBB m\u1EA5t
+      10 ph\xFAt."
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: -8761917109264984186, guid: a70d7ce6d472be94eb5ca9b2e83e34b0, type: 3}
+      CharacterSprite: {fileID: -1955216095735754797, guid: 0afcd2a39b707794b9665f359de08ed1, type: 3}
+      CharacterAnimTrigger: Sigh
+  - speaker: {fileID: 11400000, guid: ed33b76932720524cb4a5f2fd6b50419, type: 2}
+    content: "S\u1EBFp \u01A1i, 5 kh\xE1ch h\xE0ng b\u1EF1c m\xECnh qu\xE1 b\u1ECF
+      sang qu\xE1n g\xE0 r\xE1n Lotteria \u0103n h\u1EBFt r\u1ED3i. H\xF4m nay m\xECnh
+      \u0111\u1EC1n 10 \u1ED5 b\xE1nh m\xEC v\xEC l\xE0m sai order ghi tr\xEAn gi\u1EA5y!"
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 0}
+      CharacterSprite: {fileID: 3730009470101639706, guid: ad13fa2241459dd438b4fec0aeb68e0e, type: 3}
+      CharacterAnimTrigger: FadeOut

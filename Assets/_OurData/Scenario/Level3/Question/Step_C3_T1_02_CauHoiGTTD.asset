@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea60b411c9a18c4980249e287142770, type: 3}
+  m_Name: Step_C3_T1_02_CauHoiGTTD
+  m_EditorClassIdentifier: Assembly-CSharp::QuestionStep
+  questionText: "T\xE2n ch\u1EE7 t\u1ECBch mu\u1ED1n t\u0103ng l\u1EE3i nhu\u1EADn
+    thu \u0111\u01B0\u1EE3c t\u1EEB Nam. Chi\u1EBFn l\u01B0\u1EE3c qu\u1EA3n l\xFD
+    nh\xE2n s\u1EF1 c\u1EE7a b\u1EA1n l\xE0 g\xEC?"
+  optionA:
+    text: "T\u0103ng ca, \xE9p KPI: B\u1EAFt Nam l\xE0m 12 ti\u1EBFng/ng\xE0y, c\u1EA5m
+      b\u1EA5m \u0111i\u1EC7n tho\u1EA1i, c\u1EA5m ng\u1ED3i ngh\u1EC9, tr\u1EA3
+      th\xEAm m\u1ED9t t\xED ti\u1EC1n c\xF2m (GTTD tuy\u1EC7t \u0111\u1ED1i)."
+    capitalChange: 2000000
+    brandChange: -80
+    techChange: 0
+    feedback: "Ti\u1EC1n \u0111\u1ED5 v\u1EC1 \u1EA7m \u1EA7m! B\u1EA1n b\xF3c l\u1ED9t
+      tri\u1EC7t \u0111\u1EC3 s\u1EE9c lao \u0111\u1ED9ng c\u1EE7a Nam. Nh\u01B0ng
+      con ng\u01B0\u1EDDi b\u1EB1ng x\u01B0\u01A1ng b\u1EB1ng th\u1ECBt ch\u1EE9
+      \u0111\xE2u ph\u1EA3i c\xE1i m\xE1y..."
+    nextBranch: {fileID: 11400000, guid: 5f8a7b581db4e6f45b95a4e627e0c812, type: 2}
+  optionB:
+    text: "L\xE0m ng\u01B0\u1EDDi t\u1ED1t: Tr\u1EA3 cho Nam to\xE0n b\u1ED9 s\u1ED1
+      ti\u1EC1n l\xE3i t\u1EEB nh\u1EEFng \u1ED5 b\xE1nh do Nam l\xE0m ra, m\xECnh
+      kh\xF4ng gi\u1EEF l\u1EA1i \u0111\u1ED3ng n\xE0o cho c\xF4ng b\u1EB1ng."
+    capitalChange: -3000000
+    brandChange: 50
+    techChange: 0
+    feedback: "Nam t\xF4n b\u1EA1n l\xE0m Idol. B\u1EA1n c\u1EA3m th\u1EA5y t\xE2m
+      h\u1ED3n thanh th\u1EA3n... cho \u0111\u1EBFn khi c\xE1c m\xE1y m\xF3c b\u1EAFt
+      \u0111\u1EA7u \u0111\xECnh c\xF4ng v\xEC h\u1EBFt h\u1EA1n b\u1EA3o tr\xEC."
+    nextBranch: {fileID: 11400000, guid: 776de5a6153df774782f3d66be66d5e4, type: 2}
+  optionC:
+    text: "\u0110\u1EA7u t\u01B0 c\xF4ng ngh\u1EC7: Mua m\xE1y \xE9p b\xE1nh si\xEAu
+      t\u1ED1c. Nam v\u1EABn l\xE0m 6 ti\u1EBFng, nh\xE0n h\u01A1n nh\u01B0ng \xE9p
+      ra b\xE1nh g\u1EA5p 3 l\u1EA7n (GTTD t\u01B0\u01A1ng \u0111\u1ED1i)."
+    capitalChange: -1000000
+    brandChange: 15
+    techChange: 30
+    feedback: "D\xF9 t\u1ED1n v\u1ED1n mua m\xE1y, nh\u01B0ng Nam l\xE0m vi\u1EC7c
+      vui v\u1EBB, n\u0103ng su\u1EA5t x3 m\xE0 chi ph\xED ti\u1EC1n l\u01B0\u01A1ng
+      kh\xF4ng \u0111\u1ED5i. B\u1EA1n ch\xEDnh th\u1EE9c thu \u0111\u01B0\u1EE3c
+      'Gi\xE1 tr\u1ECB th\u1EB7ng d\u01B0 t\u01B0\u01A1ng \u0111\u1ED1i'!"
+    nextBranch: {fileID: 0}

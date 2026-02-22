@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2eab4a3faaa6134d89cbb71d1d5a509, type: 3}
+  m_Name: Thoai_C4_T1_Intro
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speaker: {fileID: 11400000, guid: c5049c5e0ff317d459948ede9e91b663, type: 2}
+    content: "Tuy\u1EC7t v\u1EDDi! C\u01A1 s\u1EDF 2 \u0111\xE3 \u0111i v\xE0o ho\u1EA1t
+      \u0111\u1ED9ng. Kh\xE1ch \u0111\xF4ng ngh\u1EB9t th\u1EDF, c\xF3 c\u1EA3 sinh
+      vi\xEAn trao \u0111\u1ED5i qu\u1ED1c t\u1EBF \u0111\u1EBFn mua n\u1EEFa."
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: -8761917109264984186, guid: a70d7ce6d472be94eb5ca9b2e83e34b0, type: 3}
+      CharacterSprite: {fileID: -1893889144324857684, guid: 79c1c58c456c35b4590d565860e073ff, type: 3}
+      CharacterAnimTrigger: 
+  - speaker: {fileID: 11400000, guid: c5049c5e0ff317d459948ede9e91b663, type: 2}
+    content: "Nh\u01B0ng khoan \u0111\xE3... Nam \u01A1i, order gi\u1EA5y s\u1ED1
+      45 l\xE0 kh\xF4ng h\xE0nh hay nhi\u1EC1u ch\u1EA3? Tr\u1EDDi \u01A1i, t\u1EDD
+      gi\u1EA5y bill bay m\u1EA5t \u0111\xE2u r\u1ED3i???"
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 0}
+      CharacterSprite: {fileID: 3730009470101639706, guid: ad13fa2241459dd438b4fec0aeb68e0e, type: 3}
+      CharacterAnimTrigger: Shake
+  - speaker: {fileID: 11400000, guid: ed33b76932720524cb4a5f2fd6b50419, type: 2}
+    content: "S\u1EBFp \u01A1i, kh\xE1ch T\xE2y \u0111\u01B0a t\u1EDD 500k em kh\xF4ng
+      c\xF3 ti\u1EC1n th\u1ED1i! C\xF2n 3 kh\xE1ch n\u1EEFa \u0111ang ph\xE0n n\xE0n
+      v\xEC ch\u1EDD 20 ph\xFAt r\u1ED3i ch\u01B0a c\xF3 b\xE1nh!"
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 0}
+      CharacterSprite: {fileID: 8228647762972188995, guid: 916ec7769fba0d54b8a2ce2ab07c7a26, type: 3}
+      CharacterAnimTrigger: Dizzy

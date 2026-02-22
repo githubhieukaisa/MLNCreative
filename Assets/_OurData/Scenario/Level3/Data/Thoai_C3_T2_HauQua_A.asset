@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2eab4a3faaa6134d89cbb71d1d5a509, type: 3}
+  m_Name: Thoai_C3_T2_HauQua_A
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speaker: {fileID: 11400000, guid: c5049c5e0ff317d459948ede9e91b663, type: 2}
+    content: "Cu\u1ED9c \u0111\u1EDDi \u0111\xF3 c\xF3 bao l\xE2u m\xE0 h\u1EEFng
+      h\u1EDD! Check-in resort 5 sao c\xF9ng iPhone 16 Pro Max th\xF4i!"
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 7276621636294416741, guid: 7311201e5a0cb514ca18d4b09cb30279, type: 3}
+      CharacterSprite: {fileID: -1893889144324857684, guid: 79c1c58c456c35b4590d565860e073ff, type: 3}
+      CharacterAnimTrigger: Float
+  - speaker: {fileID: 11400000, guid: 2f64cf74fb297b24fbcfa21c4ebf3104, type: 2}
+    content: "V\xE0i th\xE1ng sau, khi b\u1EA1n tr\u1EDF v\u1EC1, xe b\xE1nh m\xEC
+      c\u0169 \u0111\xE3 h\u1ECFng h\xF3c, m\xE1y \xE9p \u0111\xECnh c\xF4ng v\xEC
+      kh\xF4ng \u0111\u01B0\u1EE3c b\u1EA3o d\u01B0\u1EE1ng. Kh\xE1ch h\xE0ng \u0111\xE3
+      ch\u1EA1y sang mua c\u1EE7a \u0111\u1ED1i th\u1EE7 c\xF3 xe m\u1EDBi h\u01A1n."
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 1285922619873297232, guid: 38c26bda4219e7644acf35f8da6fda56, type: 3}
+      CharacterSprite: {fileID: 21300000, guid: f67a3ea10109c9c4dafc478eca3d914e, type: 2}
+      CharacterAnimTrigger: 
+  - speaker: {fileID: 11400000, guid: c5049c5e0ff317d459948ede9e91b663, type: 2}
+    content: "Th\u1EBF l\xE0 h\u1EBFt... Ti\u1EC1n du l\u1ECBch c\u0169ng c\u1EA1n,
+      m\xE0 xe th\xEC h\u1ECFng kh\xF4ng c\xF3 ti\u1EC1n s\u1EEDa. L\u1EA1i \xFAp
+      m\xEC t\xF4m qua ng\xE0y r\u1ED3i..."
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 0}
+      CharacterSprite: {fileID: 7566863766233733025, guid: 119caf2d917709c4e8558ba73d0b7902, type: 3}
+      CharacterAnimTrigger: Tremble

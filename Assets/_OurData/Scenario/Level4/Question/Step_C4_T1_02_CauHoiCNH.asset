@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea60b411c9a18c4980249e287142770, type: 3}
+  m_Name: Step_C4_T1_02_CauHoiCNH
+  m_EditorClassIdentifier: Assembly-CSharp::QuestionStep
+  questionText: "Qu\xE1n qu\xE1 \u0111\xF4ng, nh\xE2n vi\xEAn ghi order b\u1EB1ng
+    gi\u1EA5y hay nh\u1EA7m l\u1EABn, th\u1ED1i ti\u1EC1n l\u1EBB m\u1EA5t th\u1EDDi
+    gian. Kh\xE1ch ph\xE0n n\xE0n ch\u1EDD l\xE2u. B\u1EA1n s\u1EBD n\xE2ng c\u1EA5p
+    h\u1EC7 th\u1ED1ng th\u1EBF n\xE0o?"
+  optionA:
+    text: "K\u1EC7 kh\xE1ch ph\xE0n n\xE0n. C\u1EE9 gi\u1EEF nguy\xEAn c\xE1ch b\xE1n
+      h\xE0ng truy\u1EC1n th\u1ED1ng (nh\u1EADn ti\u1EC1n m\u1EB7t, ghi gi\u1EA5y)
+      v\xEC 'h\u01B0\u01A1ng v\u1ECB v\xE0 phong c\xE1ch th\u1EE7 c\xF4ng m\u1EDBi
+      l\xE0 c\u1ED1t l\xF5i'."
+    capitalChange: -1000000
+    brandChange: -30
+    techChange: -20
+    feedback: "Ti\u1EBFt ki\u1EC7m \u0111\u01B0\u1EE3c ti\u1EC1n n\xE2ng c\u1EA5p,
+      nh\u01B0ng b\u1EA1n \u0111\xE1nh m\u1EA5t t\u1EC7p kh\xE1ch h\xE0ng ngo\u1EA1i
+      qu\u1ED1c v\xE0 b\u1ECB kh\xE1ch quen t\u1EA9y chay v\xEC ch\u1EDD qu\xE1 l\xE2u.
+      Ti\u1EC1n \u0111\u1EC1n b\xF9 \u0111\u1ED3 \u0103n l\xE0m sai c\xF2n nhi\u1EC1u
+      h\u01A1n ti\u1EC1n l\xE3i."
+    nextBranch: {fileID: 11400000, guid: 59304a0cd832db743bce24cd0bc0ddc2, type: 2}
+  optionB:
+    text: "L\xEAn ch\u1EE3 \u0111\u1ED3 c\u0169 mua l\u1EA1i m\u1EA5y c\xE1i m\xE1y
+      t\xEDnh ti\u1EC1n POS thanh l\xFD t\u1EEB ch\u1EE5c n\u0103m tr\u01B0\u1EDBc.
+      Thi tho\u1EA3ng \u0111\u01A1 lag nh\u01B0ng r\u1EBB, c\u1ED1t \u0111\u1EC3
+      c\xF3 c\xE1i g\u1ECDi l\xE0 'd\xF9ng m\xE1y m\xF3c'."
+    capitalChange: -1500000
+    brandChange: -40
+    techChange: -10
+    feedback: "M\xE1y m\xF3c k\xEAu c\u1ECDt k\u1EB9t, b\u1EA5m 1 n\xFAt ch\u1EDD
+      5 gi\xE2y m\u1EDBi nh\u1EADn. Kh\xE1ch h\xE0ng ng\xE1n ng\u1EA9m nh\xECn nh\xE2n
+      vi\xEAn \u0111\u1EADp m\xE1y t\xEDnh b\xF4m b\u1ED1p. Ch\u1EB3ng m\u1EA5y ch\u1ED1c
+      m\xE1y h\u1ECFng h\u1EB3n..."
+    nextBranch: {fileID: 11400000, guid: 5f65407fd2e227b4fac2c920a4f2e71c, type: 2}
+  optionC:
+    text: "Chi \u0111\u1EADm! Tri\u1EC3n khai m\xE3 QR thanh to\xE1n \u0111\u1ED9ng,
+      t\u1EA1o Mini App order tr\u01B0\u1EDBc qua Zalo/Facebook. Ai \u0111\u1EB7t
+      tr\u01B0\u1EDBc \u0111\u1EBFn ch\u1EC9 vi\u1EC7c qu\xE9t m\xE3 l\u1EA5y \u0111\u1ED3
+      (Chuy\u1EC3n \u0111\u1ED5i s\u1ED1 4.0)."
+    capitalChange: -4000000
+    brandChange: 40
+    techChange: 50
+    feedback: "B\u1EA1n x\xF3t xa khi t\xE0i kho\u1EA3n b\u1ECB tr\u1EEB m\u1ED9t
+      c\u1EE5c ti\u1EC1n l\u1EDBn. Nh\u01B0ng ngay h\xF4m sau, t\u1ED1c \u0111\u1ED9
+      b\xE1n h\xE0ng t\u0103ng g\u1EA5p 3. Sinh vi\xEAn khen qu\xE1n x\u1ECBn x\xF2,
+      hi\u1EC7n \u0111\u1EA1i, qu\xE9t m\xE3 r\u1EB9t r\u1EB9t l\xE0 xong!"
+    nextBranch: {fileID: 0}

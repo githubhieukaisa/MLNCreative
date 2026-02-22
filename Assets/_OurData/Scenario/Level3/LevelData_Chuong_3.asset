@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3880a69df5eefa46a96a60fd9ad702e, type: 3}
+  m_Name: LevelData_Chuong_3
+  m_EditorClassIdentifier: Assembly-CSharp::LevelData
+  levelName: LevelData_Chuong_3
+  steps:
+  - {fileID: 11400000, guid: 836d9a6110854ca4f8e10f4d0201d36b, type: 2}
+  - {fileID: 11400000, guid: 8cebbb178fb3a664d82c7b34165b77c1, type: 2}
+  - {fileID: 11400000, guid: 82508417cf29fef4fb5c26a24e4d7433, type: 2}
+  - {fileID: 11400000, guid: 946d8f6b525417948a85c5e3080b7386, type: 2}
+  - {fileID: 11400000, guid: 229fe49edbefbfa4ba4fa865d042e0f3, type: 2}
