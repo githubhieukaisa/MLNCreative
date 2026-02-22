@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2eab4a3faaa6134d89cbb71d1d5a509, type: 3}
+  m_Name: Thoai_T2_AnhCuong_SaiA
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speaker: {fileID: 11400000, guid: c5049c5e0ff317d459948ede9e91b663, type: 2}
+    content: "O\xE1p... bu\u1ED3n ng\u1EE7 qu\xE1..."
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: -2841864619938360493, guid: 49e153c2562627a46ab3bfb421c9d819, type: 3}
+      CharacterSprite: {fileID: 5703871548070424986, guid: 8039e3c904124844590a3184b89e5bae, type: 3}
+      CharacterAnimTrigger: 
+  - speaker: {fileID: 11400000, guid: 01ed37436cc08f844852114d42b0854a, type: 2}
+    content: "Tr\u1EDDi \u0111\u1EA5t \u01A1i, c\xE1i b\u1EBFp c\xF3 kh\xE1c g\xEC
+      b\xE3i chi\u1EBFn tr\u01B0\u1EDDng kh\xF4ng? Em qu\xEAn s\u1EA3n xu\u1EA5t
+      h\xE0ng h\xF3a c\u1EA7n 'Ph\xE2n c\xF4ng lao \u0111\u1ED9ng x\xE3 h\u1ED9i'
+      \xE0?"
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 0}
+      CharacterSprite: {fileID: -217934053373611831, guid: 27ca4e0b2d0ae2643b16e6d9d8c7d525, type: 3}
+      CharacterAnimTrigger: Shake

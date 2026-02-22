@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 480d7a42e2a2bc344a586e56d8693b59, type: 3}
-  m_Name: Step_T1_AnhCuong_Chung
+  m_Name: Step_GameOver_Phasan
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStep
-  dialogueData: {fileID: 11400000, guid: a98198bff28841f40b1670fa58a425c5, type: 2}
+  dialogueData: {fileID: 11400000, guid: eb104059a42f77a47852eb539030ff90, type: 2}
   startingVisual:
     BackgroundSprite: {fileID: 0}
     CharacterSprite: {fileID: 0}

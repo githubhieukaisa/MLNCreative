@@ -6,6 +6,7 @@ public class GameManager : TeamBehaviour
     public static GameManager Instance { get; private set; }
     [Header("Story Data")]
     [SerializeField] private LevelData _startingLevel;
+    [SerializeField] private LevelData _gameOverLevelData;
 
     public Action<int, int, int> OnStatsChanged;
     public Action<bool> OnGameEnded;
@@ -90,6 +91,24 @@ public class GameManager : TeamBehaviour
         if (selectedOption.techChange != 0)
             PlayerDataManager.Instance.ModifyStat(StatType.Tech, selectedOption.techChange);
 
+        //2.THÊM LOGIC ÂM THANH NGAY Ở ĐÂY
+        if (selectedOption.capitalChange > 0)
+        {
+            Core.Audio.AudioManager.Instance.PlaySFX(Core.Audio.SFXType.Cash_In);
+        }
+        else if (selectedOption.capitalChange < 0)
+        {
+            Core.Audio.AudioManager.Instance.PlaySFX(Core.Audio.SFXType.Cash_Out);
+        }
+        else if (selectedOption.brandChange < 0)
+        {
+            Core.Audio.AudioManager.Instance.PlaySFX(Core.Audio.SFXType.Wrong_Action);
+        }
+        else if (selectedOption.brandChange > 0 || selectedOption.techChange > 0)
+        {
+            Core.Audio.AudioManager.Instance.PlaySFX(Core.Audio.SFXType.Correct_Action);
+        }
+
         _pendingBranch = selectedOption.nextBranch;
 
         OnStatsChanged?.Invoke(
@@ -98,15 +117,15 @@ public class GameManager : TeamBehaviour
             PlayerDataManager.Instance.GetStat(StatType.Tech)
         );
 
-        // 2. Hiện Feedback, bấm Continue thì đi tiếp
-        ScenarioUIManager.Instance.ShowFeedback(selectedOption.feedback, NextStep);
-
         // Note: Nếu Vốn <= 0, xử lý Game Over ở đây.
         if (PlayerDataManager.Instance.GetStat(StatType.Capital) <= 0)
         {
             Debug.Log("GAME OVER: PHÁ SẢN!");
-            OnGameEnded?.Invoke(false);
+            _pendingBranch = _gameOverLevelData;
         }
+
+        // 2. Hiện Feedback, bấm Continue thì đi tiếp
+        ScenarioUIManager.Instance.ShowFeedback(selectedOption.feedback, NextStep);
     }
 
     private void NextStep()

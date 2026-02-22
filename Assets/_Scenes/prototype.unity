@@ -650,6 +650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   _startingLevel: {fileID: 11400000, guid: a362e77f1e7c5744ab2b73a32dc837b5, type: 2}
+  _gameOverLevelData: {fileID: 11400000, guid: dfed03b5cfc6d0d458176330492b5cbc, type: 2}
 --- !u!1 &70419847
 GameObject:
   m_ObjectHideFlags: 0
@@ -1998,7 +1999,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -49.075, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 168, y: 564}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &962405220
@@ -2825,7 +2826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneVisualManager
   imgBackground: {fileID: 950226015}
   imgCharacter: {fileID: 962405220}
-  characterAnimator: {fileID: 0}
+  characterAnimator: {fileID: 962405222}
 --- !u!114 &1451933328
 MonoBehaviour:
   m_ObjectHideFlags: 0

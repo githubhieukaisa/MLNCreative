@@ -15,16 +15,16 @@ MonoBehaviour:
   _tracks:
   - type: 1
     clip: {fileID: 8300000, guid: 68d86da0b66d95049b7ddb065a1707f4, type: 3}
-    volumeScale: 1
+    volumeScale: 0.5
   - type: 2
     clip: {fileID: 8300000, guid: ee1782a5262e44b429caf00c2052ef75, type: 3}
-    volumeScale: 1
+    volumeScale: 0.5
   - type: 3
     clip: {fileID: 8300000, guid: ee1782a5262e44b429caf00c2052ef75, type: 3}
-    volumeScale: 0.8
+    volumeScale: 0.4
   - type: 4
     clip: {fileID: 8300000, guid: dc821e40748e1414999d8df0bbdf3ce1, type: 3}
-    volumeScale: 1
+    volumeScale: 0.5
   - type: 5
     clip: {fileID: 8300000, guid: 037de3683183aa94d9ccd8aad5d59e9a, type: 3}
-    volumeScale: 1
+    volumeScale: 0.5

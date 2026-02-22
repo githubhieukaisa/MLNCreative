@@ -22,4 +22,4 @@ MonoBehaviour:
     lineVisualState:
       BackgroundSprite: {fileID: 8352040614398353357, guid: 5ed92d81e13d57c4d8e5f1f8c74930ed, type: 3}
       CharacterSprite: {fileID: -2684102947291226346, guid: 42a7d46c2c139864a8ed7883b71eeee5, type: 3}
-      CharacterAnimTrigger: 
+      CharacterAnimTrigger: Jump

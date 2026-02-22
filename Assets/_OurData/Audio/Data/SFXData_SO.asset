@@ -15,22 +15,22 @@ MonoBehaviour:
   _tracks:
   - type: 1
     clip: {fileID: 8300000, guid: 922efe63b78cccd4cb6bd608feaac8e5, type: 3}
-    volumeScale: 1
+    volumeScale: 0.5
   - type: 2
     clip: {fileID: 8300000, guid: e50ddf637a131d04ea741118f77ce384, type: 3}
-    volumeScale: 1
+    volumeScale: 0.5
   - type: 3
     clip: {fileID: 8300000, guid: d6153fb9b32c8434ea3a692acc65da74, type: 3}
-    volumeScale: 1
+    volumeScale: 0.5
   - type: 4
     clip: {fileID: 8300000, guid: d6153fb9b32c8434ea3a692acc65da74, type: 3}
-    volumeScale: 1
+    volumeScale: 0.5
   - type: 5
     clip: {fileID: 8300000, guid: e5aeee6e16690504a979c5cd23fdcce6, type: 3}
-    volumeScale: 1
+    volumeScale: 0.5
   - type: 6
     clip: {fileID: 8300000, guid: 24931247ec792c141981a84e6ab319b0, type: 3}
-    volumeScale: 1
+    volumeScale: 0.5
   - type: 7
     clip: {fileID: 8300000, guid: 1b91cd396833d474a838e3c2c8cd65e3, type: 3}
-    volumeScale: 1
+    volumeScale: 0.5

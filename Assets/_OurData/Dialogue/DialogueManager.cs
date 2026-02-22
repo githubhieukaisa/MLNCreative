@@ -149,7 +149,6 @@ public class DialogueManager : TeamBehaviour
             yield return new WaitForSeconds(_typingSpeed);
         }
 
-        _audioSource.Stop();
         _isTyping = false;
     }
 
