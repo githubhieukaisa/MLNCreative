@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2eab4a3faaa6134d89cbb71d1d5a509, type: 3}
+  m_Name: Thoai_C4_T2_AnhCuong_B
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speaker: {fileID: 11400000, guid: 01ed37436cc08f844852114d42b0854a, type: 2}
+    content: "Sai l\u1EA7m ch\xED m\u1EA1ng! C\u1EA7m m\u1ED9t \u0111\u1ED1ng ti\u1EC1n
+      r\u1ED3i m\u1EA5t tr\u1EAFng c\u01A1 \u0111\u1ED3 th\u1EA5y vui kh\xF4ng em?"
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 462393889442884090, guid: 9d98ba96aed03f7499f40dd8a421016a, type: 3}
+      CharacterSprite: {fileID: -217934053373611831, guid: 27ca4e0b2d0ae2643b16e6d9d8c7d525, type: 3}
+      CharacterAnimTrigger: Sigh
+  - speaker: {fileID: 11400000, guid: 01ed37436cc08f844852114d42b0854a, type: 2}
+    content: "Nguy\xEAn t\u1EAFc s\u1ED1ng c\xF2n khi h\u1ED9i nh\u1EADp l\xE0 ph\u1EA3i
+      x\xE2y d\u1EF1ng 'N\u1EC1n kinh t\u1EBF \u0111\u1ED9c l\u1EADp, t\u1EF1 ch\u1EE7'.
+      Em b\xE1n \u0111\u1EE9t th\u01B0\u01A1ng hi\u1EC7u l\xE0 em t\u1EF1 \u0111\xE1nh
+      m\u1EA5t quy\u1EC1n t\u1EF1 quy\u1EBFt c\u1EE7a m\xECnh, l\u1EC7 thu\u1ED9c
+      ho\xE0n to\xE0n v\xE0o t\u01B0 b\u1EA3n n\u01B0\u1EDBc ngo\xE0i. H\u1ED9i nh\u1EADp
+      ch\u1EE9 kh\xF4ng h\xF2a tan, nh\u1EDB l\u1EA5y!"
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 0}
+      CharacterSprite: {fileID: 0}
+      CharacterAnimTrigger: Facepalm

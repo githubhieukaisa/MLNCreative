@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3880a69df5eefa46a96a60fd9ad702e, type: 3}
-  m_Name: LevelData_Chuong_4
+  m_Name: LevelData_C4_T2_LoopB
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  levelName: LevelData_Chuong_4
+  levelName: LevelData_C4_T2_LoopB
   steps:
-  - {fileID: 11400000, guid: 35fb3e2041485bb4fa8c689ed2ad5af2, type: 2}
-  - {fileID: 11400000, guid: 9223cbcba1cbff14fbc2e1bcc5de9e3c, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 3746a9ca2c080f84091a4312f17f8136, type: 2}
+  - {fileID: 11400000, guid: c69ab437f9bc50b40b67c5ea307cd767, type: 2}
+  - {fileID: 11400000, guid: ecd0c6db320c4b0438e295768a6a5ded, type: 2}

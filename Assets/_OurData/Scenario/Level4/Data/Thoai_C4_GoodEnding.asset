@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2eab4a3faaa6134d89cbb71d1d5a509, type: 3}
+  m_Name: Thoai_C4_GoodEnding
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speaker: {fileID: 11400000, guid: 86162a713965fd841b595307ea3a3049, type: 2}
+    content: Wow! This Banh Mi is amazing! Very crispy and delicious!
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 6128645930427288602, guid: a66007b2aa527cb4495b614e4c18e324, type: 3}
+      CharacterSprite: {fileID: -8272560168220028574, guid: 0569914269af94d469837caba575b92e, type: 3}
+      CharacterAnimTrigger: Bounce
+  - speaker: {fileID: 11400000, guid: 2f64cf74fb297b24fbcfa21c4ebf3104, type: 2}
+    content: "Nh\u1EDD ch\u1EE7 \u0111\u1ED9ng \u0111\u01B0a b\xE1nh m\xEC l\xEAn
+      c\xE1c n\u1EC1n t\u1EA3ng qu\u1ED1c t\u1EBF v\xE0 menu song ng\u1EEF, xe b\xE1nh
+      m\xEC c\u1EE7a b\u1EA1n tr\u1EDF th\xE0nh m\xF3n \u0103n y\xEAu th\xEDch c\u1EE7a
+      c\u1EA3 sinh vi\xEAn Vi\u1EC7t Nam l\u1EABn qu\u1ED1c t\u1EBF. L\u1EE3i nhu\u1EADn
+      b\xF9ng n\u1ED5, \u0111\xE1nh b\u1EADt c\u1EA3 h\xE3ng Fast-food \u0111\u1ED1i
+      di\u1EC7n!"
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 0}
+      CharacterSprite: {fileID: 21300000, guid: f67a3ea10109c9c4dafc478eca3d914e, type: 2}
+      CharacterAnimTrigger: 
+  - speaker: {fileID: 11400000, guid: 2f64cf74fb297b24fbcfa21c4ebf3104, type: 2}
+    content: "CH\xDAC M\u1EEANG! B\u1EA0N \u0110\xC3 TR\u1EDE TH\xC0NH T\u1EF6 PH\xDA
+      B\xC1NH M\xCC! \nB\u1EAFt \u0111\u1EA7u t\u1EEB vi\u1EC7c th\u1EA5u hi\u1EC3u
+      H\xE0ng h\xF3a v\xE0 Gi\xE1 tr\u1ECB..."
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 5366048565842863099, guid: 6d1f69e5a5d43d64a969430c59edc857, type: 3}
+      CharacterSprite: {fileID: -1893889144324857684, guid: 79c1c58c456c35b4590d565860e073ff, type: 3}
+      CharacterAnimTrigger: Cheer
+  - speaker: {fileID: 11400000, guid: 2f64cf74fb297b24fbcfa21c4ebf3104, type: 2}
+    content: "... V\u01B0\u1EE3t qua khuy\u1EBFt t\u1EADt c\u1EE7a Kinh t\u1EBF th\u1ECB
+      tr\u01B0\u1EDDng, bi\u1EBFt c\xE1ch T\xEDch l\u0169y t\u01B0 b\u1EA3n, v\xE0
+      cu\u1ED1i c\xF9ng l\xE0 \xE1p d\u1EE5ng th\xE0nh c\xF4ng CNH-H\u0110H c\xF9ng
+      H\u1ED9i nh\u1EADp kinh t\u1EBF qu\u1ED1c t\u1EBF!"
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 0}
+      CharacterSprite: {fileID: -1893889144324857684, guid: 79c1c58c456c35b4590d565860e073ff, type: 3}
+      CharacterAnimTrigger: Cheer
+  - speaker: {fileID: 11400000, guid: 2f64cf74fb297b24fbcfa21c4ebf3104, type: 2}
+    content: "B\u1EA1n kh\xF4ng ch\u1EC9 l\xE0 m\u1ED9t doanh nh\xE2n ki\u1EC7t xu\u1EA5t,
+      m\xE0 c\xF2n l\xE0 m\u1ED9t sinh vi\xEAn n\u1EAFm v\u1EEFng Kinh t\u1EBF Ch\xEDnh
+      tr\u1ECB M\xE1c - L\xEAnin. A+ th\u1EB3ng ti\u1EBFn!!!\n--- GAME CLEAR ---"
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 0}
+      CharacterSprite: {fileID: -1893889144324857684, guid: 79c1c58c456c35b4590d565860e073ff, type: 3}
+      CharacterAnimTrigger: Bounce
