@@ -6,12 +6,13 @@ public class GameManager : TeamBehaviour
 {
     public static GameManager Instance { get; private set; }
     [Header("Story Data")]
-    [SerializeField] private LevelData _startingLevel;
+    [SerializeField] private List<LevelData> _chapters;
     [SerializeField] private LevelData _gameOverLevelData;
 
     public Action<int, int, int> OnStatsChanged;
     public Action<bool> OnGameEnded;
 
+    private int _currentChapterIndex = 0;
     private int _currentStepIndex = 0;
     private LevelData _currentLevel;
     private LevelData _pendingBranch;
@@ -34,10 +35,11 @@ public class GameManager : TeamBehaviour
 
     private void Start()
     {
-        if (_startingLevel == null || _startingLevel.steps.Count == 0) return;
+        if (_chapters == null || _chapters.Count == 0) return;
 
+        _currentChapterIndex = 0;
         _sequenceStack.Clear();
-        LoadSequence(_startingLevel);
+        LoadSequence(_chapters[_currentChapterIndex]);
     }
 
     private void LoadSequence(LevelData newSequence)
@@ -57,7 +59,6 @@ public class GameManager : TeamBehaviour
     {
         if (_currentStepIndex >= _currentLevel.steps.Count)
         {
-            // Nếu đang ở màn Game Over thì dừng hẳn, không quay về nữa
             if (_currentLevel == _gameOverLevelData)
             {
                 Debug.Log("TRÒ CHƠI KẾT THÚC (PHÁ SẢN)!");
@@ -65,22 +66,35 @@ public class GameManager : TeamBehaviour
                 return;
             }
 
-            // Nếu trong Stack còn trí nhớ -> Trở về nhánh chính
+            // 1. Trở về nhánh chính nếu đang ở trong Loop
             if (_sequenceStack.Count > 0)
             {
                 SequenceState prevState = _sequenceStack.Pop();
                 _currentLevel = prevState.level;
                 _currentStepIndex = prevState.index;
 
-                PlayCurrentStep(); // Chạy tiếp bước kế tiếp của nhánh chính
+                PlayCurrentStep();
                 return;
             }
 
-            Debug.Log("HẾT CỐT TRUYỆN!");
-            OnGameEnded?.Invoke(true);
-            return;
-        }
+            // 2. MỚI THÊM: NẾU ĐÃ HẾT 1 CHƯƠNG VÀ KHÔNG CÒN VÒNG LẶP NÀO TRONG STACK
+            _currentChapterIndex++; // Tăng chỉ số chương lên
 
+            if (_currentChapterIndex < _chapters.Count)
+            {
+                Debug.Log($"--- BẮT ĐẦU CHƯƠNG {_currentChapterIndex + 1} ---");
+                _sequenceStack.Clear(); // Xóa sạch trí nhớ cũ cho an toàn
+                LoadSequence(_chapters[_currentChapterIndex]); // Tự động chạy Chương tiếp theo
+                return;
+            }
+            else
+            {
+                // Đã chạy qua hết tất cả các chương trong List
+                Debug.Log("CHÚC MỪNG! BẠN ĐÃ PHÁ ĐẢO TOÀN BỘ GAME!");
+                OnGameEnded?.Invoke(true);
+                return;
+            }
+        }
         ScenarioStep step = _currentLevel.steps[_currentStepIndex];
 
         // Dùng Pattern Matching của C# mới cực kỳ sạch

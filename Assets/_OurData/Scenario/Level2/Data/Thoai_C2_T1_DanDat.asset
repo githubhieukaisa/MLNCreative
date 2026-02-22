@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2eab4a3faaa6134d89cbb71d1d5a509, type: 3}
+  m_Name: Thoai_C2_T1_DanDat
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speaker: {fileID: 11400000, guid: c5049c5e0ff317d459948ede9e91b663, type: 2}
+    content: "M\u1ED9t bu\u1ED5i s\xE1ng \u0111\u1EB9p tr\u1EDDi \u0111\u1EBFn d\u1ECDn
+      h\xE0ng... Khoan \u0111\xE3! C\xE1i xe b\xE1nh m\xEC to ch\xE0 b\xE1 c\xF3
+      g\u1EAFn loa ph\xE1t nh\u1EA1c Tiktok x\u1EADp x\xECnh b\xEAn c\u1EA1nh l\xE0
+      sao \u0111\xE2y?"
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: -6996199402916270438, guid: 76587dac88153cf419909fc6f529b323, type: 3}
+      CharacterSprite: {fileID: 9021067942074162785, guid: 9bcf999c057f96f4da4e71674c03519f, type: 3}
+      CharacterAnimTrigger: 
+  - speaker: {fileID: 11400000, guid: 023e49c24a9e7de4c9668f1ce53e5c9d, type: 2}
+    content: "Ch\xE0o ng\u01B0\u1EDDi anh em! B\xE1nh m\xEC Than Hoa khai tr\u01B0\u01A1ng
+      \u0111\xE2y, r\u1EBB h\u01A1n xe b\xEAn c\u1EA1nh 2K! M\u1EA1i d\xF4 m\u1EA1i
+      d\xF4!"
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 0}
+      CharacterSprite: {fileID: -6400060194109125342, guid: 724c07ba172718148b7c575c22f81f78, type: 3}
+      CharacterAnimTrigger: 
+  - speaker: {fileID: 11400000, guid: c5049c5e0ff317d459948ede9e91b663, type: 2}
+    content: "Toang r\u1ED3i! Kh\xE1ch quen c\u1EE7a m\xECnh b\u1ECB ti\u1EBFng nh\u1EA1c
+      v\xE0 c\xE1i bi\u1EC3n gi\u1EA3m gi\xE1 h\xFAt h\u1EBFt sang b\xEAn \u0111\xF3.
+      C\u1EE9 \u0111\xE0 n\xE0y th\xEC \u1EBF m\u1ED1c meo m\u1EA5t. Ph\u1EA3i l\xE0m
+      g\xEC \u0111\xF3 th\xF4i!"
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 0}
+      CharacterSprite: {fileID: 6521387171199294658, guid: 3292b8b760bb73344bff8c77f7cf1f82, type: 3}
+      CharacterAnimTrigger: 
