@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Core.Audio;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +15,7 @@ public class DialogueManager : TeamBehaviour
     [SerializeField] private TextMeshProUGUI _characterNameText;
     [SerializeField] private TextMeshProUGUI _dialogueText;
     [SerializeField] private GameObject _dialoguePanel;
+    [SerializeField] private Button _btnNext;
 
     [Header("Settings")]
     [SerializeField] private float _typingSpeed = 0.02f;
@@ -41,6 +43,22 @@ public class DialogueManager : TeamBehaviour
         if (!_audioSource) _audioSource = GetComponent<AudioSource>();
     }
 
+    private void Start()
+    {
+        if (_btnNext)
+        {
+            _btnNext.onClick.AddListener(OnNextAndInteraction);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (_btnNext)
+        {
+            _btnNext.onClick.RemoveListener(OnNextAndInteraction);
+        }
+    }
+
     // --- INPUT HANDLING (MỚI) ---
     private void Update()
     {
@@ -48,10 +66,11 @@ public class DialogueManager : TeamBehaviour
         if (!IsActive) return;
 
         // Bấm chuột trái, Space, hoặc Enter để next
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+        if (!Input.GetKeyDown(KeyCode.Space) && !Input.GetKeyDown(KeyCode.Return))
         {
-            OnNextAndInteraction();
+            return;
         }
+        OnNextAndInteraction();
     }
 
     public void StartDialogue(DialogueData data, Action onEnded = null)
@@ -107,6 +126,12 @@ public class DialogueManager : TeamBehaviour
             PlayAudio(clipToPlay);
         }
 
+        if (SceneVisualManager.Instance != null && currentLine.lineVisualState != null)
+        {
+            // Ra lệnh cho hệ thống của bạn đổi Background/Character/Animation
+            SceneVisualManager.Instance.ApplyVisualState(currentLine.lineVisualState);
+        }
+
         _currentFullSentence = currentLine.content;
 
         StopAllCoroutines();
@@ -124,6 +149,7 @@ public class DialogueManager : TeamBehaviour
             yield return new WaitForSeconds(_typingSpeed);
         }
 
+        _audioSource.Stop();
         _isTyping = false;
     }
 
@@ -141,7 +167,8 @@ public class DialogueManager : TeamBehaviour
         IsActive = false;
         if (_dialoguePanel) _dialoguePanel.SetActive(false);
 
-        _onDialogueEndedCallback?.Invoke();
+        Action tempCallback = _onDialogueEndedCallback;
         _onDialogueEndedCallback = null;
+        tempCallback?.Invoke();
     }
 }

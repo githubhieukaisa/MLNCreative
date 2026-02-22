@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2eab4a3faaa6134d89cbb71d1d5a509, type: 3}
+  m_Name: Thoai_T1_AnhCuong_Chung
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speaker: {fileID: 11400000, guid: 2f64cf74fb297b24fbcfa21c4ebf3104, type: 2}
+    content: "Xe b\xE1nh m\xEC \u1EBF ch\u1ECFng ch\u01A1. Gi\xF3 th\u1ED5i hiu h\u1EAFt.
+      B\u1ED7ng m\u1ED9t thanh ni\xEAn mua chai n\u01B0\u1EDBc su\u1ED1i b\u01B0\u1EDBc
+      t\u1EDBi v\u1ED7 vai b\u1EA1n."
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: -8867039835611936239, guid: 69d63b7a19f6e5e409f3ed63fbb646a5, type: 3}
+      CharacterSprite: {fileID: -2059324002, guid: 65d3e720b3ab7ec4b9d9c4b4277ba738, type: 3}
+      CharacterAnimTrigger: 
+  - speaker: {fileID: 11400000, guid: c5049c5e0ff317d459948ede9e91b663, type: 2}
+    content: "Anh C\u01B0\u1EDDng l\xE0 m\u1ED9t ng\u01B0\u1EDDi anh \u0111\xE3 ch\u01A1i
+      c\xF9ng t\xF4i t\u1EEB nh\u1ECF. \u0110\xE3 d\u1EA1y t\xF4i r\u1EA5t nhi\u1EC1u
+      \u0111i\u1EC1u."
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: -8867039835611936239, guid: 69d63b7a19f6e5e409f3ed63fbb646a5, type: 3}
+      CharacterSprite: {fileID: -1149673380122903276, guid: 42a7d46c2c139864a8ed7883b71eeee5, type: 3}
+      CharacterAnimTrigger: 
+  - speaker: {fileID: 11400000, guid: c5049c5e0ff317d459948ede9e91b663, type: 2}
+    content: "M\u1EB7c d\xF9 t\xF4i nh\u1EDB r\xF5 t\u1EEBng s\u1EF1 vi\u1EC7c trong
+      qu\xE1 kh\u1EE9 nh\u01B0ng l\u1EA1i kh\xF4ng th\u1EC3 nh\u1EDB \u0111\u01B0\u1EE3c
+      h\xECnh d\xE1ng c\u1EE7a anh C\u01B0\u1EDDng. "
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: -8867039835611936239, guid: 69d63b7a19f6e5e409f3ed63fbb646a5, type: 3}
+      CharacterSprite: {fileID: 8350362020719645861, guid: 42a7d46c2c139864a8ed7883b71eeee5, type: 3}
+      CharacterAnimTrigger: 
+  - speaker: {fileID: 11400000, guid: 01ed37436cc08f844852114d42b0854a, type: 2}
+    content: "Em trai, em ch\u01B0a n\u1EAFm r\xF5 kh\xE1i ni\u1EC7m v\u1EC1 H\xE0ng
+      h\xF3a r\u1ED3i. H\xE0ng ho\xE1 l\xE0 s\u1EA3n ph\u1EA9m c\u1EE7a lao \u0111\u1ED9ng
+      c\xF3 th\u1EC3 tho\u1EA3 m\xE3n nhu c\u1EA7u n\xE0o \u0111\xF3 c\u1EE7a con
+      ng\u01B0\u1EDDi th\xF4ng qua trao \u0111\u1ED5i, mua b\xE1n. "
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: -8867039835611936239, guid: 69d63b7a19f6e5e409f3ed63fbb646a5, type: 3}
+      CharacterSprite: {fileID: -2059324002, guid: 65d3e720b3ab7ec4b9d9c4b4277ba738, type: 3}
+      CharacterAnimTrigger: 

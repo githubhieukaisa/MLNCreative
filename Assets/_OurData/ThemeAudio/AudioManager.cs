@@ -13,7 +13,7 @@ namespace Core.Audio
         [SerializeField] private SFXDatabaseSO _sfxDatabase;
 
         [Header("Settings")]
-        [SerializeField] private float _crossFadeDuration = 1.5f;
+        [SerializeField] private float _crossFadeDuration = 1f;
 
         [Header("Audio Sources (Auto-Generated)")]
         [SerializeField] private AudioSource _musicSourcePrimary;   // Music A
@@ -54,7 +54,6 @@ namespace Core.Audio
 
             var sources = GetComponents<AudioSource>();
 
-            // Đảm bảo đủ 3 source: 2 cho Music (để fade qua lại), 1 cho SFX
             _musicSourcePrimary = sources.Length > 0 ? sources[0] : gameObject.AddComponent<AudioSource>();
             _musicSourceSecondary = sources.Length > 1 ? sources[1] : gameObject.AddComponent<AudioSource>();
             _sfxSource = sources.Length > 2 ? sources[2] : gameObject.AddComponent<AudioSource>();
@@ -74,7 +73,7 @@ namespace Core.Audio
             source.loop = true;
             source.playOnAwake = false;
             source.volume = 0f;
-            source.spatialBlend = 0f; // 2D Sound
+            source.spatialBlend = 0f;
         }
 
         private void SetupSFXSource(AudioSource source)
@@ -91,7 +90,16 @@ namespace Core.Audio
             if (_lowPassFilter != null) _lowPassFilter.cutoffFrequency = _normalCutoff;
         }
 
-        // ================= PUBLIC API =================
+        private void Start()
+        {
+            StartCoroutine(StartMusicDelayed());
+        }
+
+        private IEnumerator StartMusicDelayed()
+        {
+            yield return null;
+            PlayMusic(MusicType.MainMenu);
+        }
 
         /// <summary>
         /// Phát nhạc nền với hiệu ứng Crossfade mượt mà
@@ -150,6 +158,8 @@ namespace Core.Audio
         {
             var activeSource = _isPrimaryMusicActive ? _musicSourcePrimary : _musicSourceSecondary;
             var nextSource = _isPrimaryMusicActive ? _musicSourceSecondary : _musicSourcePrimary;
+
+            if (!activeSource.isPlaying) activeSource.volume = 0f;
 
             // Prepare next source
             nextSource.clip = nextClip;

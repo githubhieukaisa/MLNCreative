@@ -9,8 +9,6 @@ public class DialogueTrigger : MonoBehaviour
     [Header("Events")]
     public UnityEvent OnDialogueEnd;
 
-    private bool _isPlayerInRange;
-
     public void TriggerDialogue()
     {
         // Chặn nếu chưa gán Data hoặc Đang có hội thoại khác diễn ra

@@ -1,82 +1,67 @@
+using Core.Audio;
 using UnityEngine;
 
-namespace Core.Audio
+public class GameMusicController : TeamBehaviour
 {
-    public class GameMusicController : TeamBehaviour
+    [Header("Crisis Thresholds")]
+    [Tooltip("Nếu Vốn dưới mức này, nhạc sẽ chuyển sang dồn dập và bị nghẹt")]
+    [SerializeField] private int _crisisCapitalThreshold = 30;
+
+    private void Start()
     {
-        // [SerializeField] private float _pollutionThresholdForMusic = 0.5f; // 50% ô nhiễm đổi nhạc
-        // private bool _isUiOpen = false;
-        // private float _currentPollutionPercent = 0f;
+        // Đăng ký lắng nghe sự kiện từ GameManager
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.OnStatsChanged += HandleStatsChanged;
+            GameManager.Instance.OnGameEnded += HandleGameEnded;
+        }
 
-        // private void Start()
-        // {
-        //     if (EconomyManager.Instance != null)
-        //     {
-        //         EconomyManager.Instance.OnPollutionChanged += HandlePollutionChanged;
-        //         EconomyManager.Instance.OnBankrupt += HandleGameOver;
-        //         EconomyManager.Instance.OnEnvironmentCollapse += HandleGameOver;
-        //     }
+        // Bắt đầu game với nhạc bình thường
+        AudioManager.Instance.PlayMusic(MusicType.Gameplay);
+    }
 
-        //     if (UpgradePanelManager.Instance != null)
-        //     {
-        //         UpgradePanelManager.Instance.OnPanelOpened += HandlePanelOpened;
-        //         UpgradePanelManager.Instance.OnPanelClosed += HandlePanelClosed;
-        //     }
+    private void OnDestroy()
+    {
+        // Hủy đăng ký để tránh lỗi Memory Leak khi chuyển Scene
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.OnStatsChanged -= HandleStatsChanged;
+            GameManager.Instance.OnGameEnded -= HandleGameEnded;
+        }
+    }
 
-        //     CheckAndPlayGameplayMusic();
-        // }
+    private void HandleStatsChanged(int capital, int brand, int tech)
+    {
+        // Nếu Vốn rơi vào vùng nguy hiểm -> Bật nhạc Crisis và tăng độ nghẹt thở
+        if (capital <= _crisisCapitalThreshold && capital > 0)
+        {
+            AudioManager.Instance.PlayMusic(MusicType.Crisis);
 
-        // private void OnDestroy()
-        // {
-        //     if (EconomyManager.Instance != null)
-        //     {
-        //         EconomyManager.Instance.OnPollutionChanged -= HandlePollutionChanged;
-        //         EconomyManager.Instance.OnBankrupt -= HandleGameOver;
-        //         EconomyManager.Instance.OnEnvironmentCollapse -= HandleGameOver;
-        //     }
+            // Tính toán % căng thẳng (Từ 0.0 -> 1.0). 
+            // Vốn càng gần 0, intensity càng gần 1 (nhạc càng nghẹt)
+            float stressIntensity = 1f - ((float)capital / _crisisCapitalThreshold);
+            AudioManager.Instance.SetStressLevel(stressIntensity);
+        }
+        else if (capital > _crisisCapitalThreshold)
+        {
+            // Vốn an toàn -> Trở lại nhạc bình thường
+            AudioManager.Instance.PlayMusic(MusicType.Gameplay);
+            AudioManager.Instance.SetStressLevel(0f);
+        }
+    }
 
-        //     if (UpgradePanelManager.Instance != null)
-        //     {
-        //         UpgradePanelManager.Instance.OnPanelOpened -= HandlePanelOpened;
-        //         UpgradePanelManager.Instance.OnPanelClosed -= HandlePanelClosed;
-        //     }
-        // }
+    private void HandleGameEnded(bool isVictory)
+    {
+        // Trả lại âm thanh trong trẻo trước khi phát nhạc kết thúc
+        AudioManager.Instance.SetStressLevel(0f);
 
-        // private void HandlePollutionChanged(float current, float percentage)
-        // {
-        //     _currentPollutionPercent = percentage;
-        //     AudioManager.Instance.UpdateMusicEffect(percentage);
-        //     if (_isUiOpen) return;
-        //     CheckAndPlayGameplayMusic();
-        // }
-
-        // private void HandleGameOver()
-        // {
-        //     AudioManager.Instance.PlayMusic(MusicType.GameOver);
-        // }
-
-        // private void HandlePanelOpened()
-        // {
-        //     _isUiOpen = true;
-        //     AudioManager.Instance.PlayMusic(MusicType.MainMenu);
-        // }
-
-        // private void HandlePanelClosed()
-        // {
-        //     _isUiOpen = false;
-        //     CheckAndPlayGameplayMusic();
-        // }
-
-        // private void CheckAndPlayGameplayMusic()
-        // {
-        //     if (_currentPollutionPercent >= _pollutionThresholdForMusic)
-        //     {
-        //         AudioManager.Instance.PlayMusic(MusicType.PollutedGameplay);
-        //     }
-        //     else
-        //     {
-        //         AudioManager.Instance.PlayMusic(MusicType.NormalGameplay);
-        //     }
-        // }
+        if (isVictory)
+        {
+            AudioManager.Instance.PlayMusic(MusicType.Victory);
+        }
+        else
+        {
+            AudioManager.Instance.PlayMusic(MusicType.Defeat);
+        }
     }
 }

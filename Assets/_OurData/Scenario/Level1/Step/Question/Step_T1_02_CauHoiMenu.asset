@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea60b411c9a18c4980249e287142770, type: 3}
+  m_Name: Step_T1_02_CauHoiMenu
+  m_EditorClassIdentifier: Assembly-CSharp::QuestionStep
+  questionText: "MC \u0111ang l\xEAn menu cho xe b\xE1nh m\xEC. Ch\u1ECDn b\xE1n
+    c\xE1i g\xEC \u0111\xE2y?"
+  optionA:
+    text: "B\xE1nh m\xEC d\xE1t v\xE0ng 24K, gi\xE1 500k/\u1ED5, nh\u1EAFm t\u1EDBi
+      rich kid \u0111\u1EC3 \"l\u1EA5y le\"."
+    capitalChange: -2000000
+    brandChange: 0
+    techChange: 0
+    feedback: "\u1EBE \u1EA9m kh\xF4ng ai mua! D\u1EF1a v\xE0o \u0111\xE2u m\xE0
+      \u0111\xF2i \xFAp s\u1ECDt rich kid?"
+    nextBranch: {fileID: 11400000, guid: bd7ebd125bb5ef34f8d01de337e91cb9, type: 2}
+  optionB:
+    text: "Kh\xF4ng b\xE1n b\xE1nh m\xEC n\u1EEFa, m\u1EDF d\u1ECBch v\u1EE5 \"Cho
+      thu\xEA ng\u01B0\u1EDDi l\u1EAFng nghe sinh vi\xEAn t\xE2m s\u1EF1\", thu ph\xED
+      50k/gi\u1EDD."
+    capitalChange: 0
+    brandChange: 0
+    techChange: 0
+    feedback: "\u1EE6a m\u1EDF xe b\xE1nh m\xEC r\u1ED3i \u0111i b\xE1n d\u1ECBch
+      v\u1EE5 t\xE2m s\u1EF1? H\u01A1i sai sai nha."
+    nextBranch: {fileID: 11400000, guid: 4f1dba1c086bfd6478675a1a9b30d115, type: 2}
+  optionC:
+    text: "B\xE1nh m\xEC th\u1ECBt n\u01B0\u1EDBng ch\u1EA3o, ngon, b\u1ED5, r\u1EBB
+      (15k/\u1ED5), ph\u1EE5c v\u1EE5 sinh vi\xEAn \u0103n s\xE1ng v\u1ED9i \u0111\u1EC3
+      k\u1ECBp ch\u1EA1y deadline."
+    capitalChange: 500000
+    brandChange: 10
+    techChange: 0
+    feedback: "Quy\u1EBFt \u0111\u1ECBnh tuy\u1EC7t v\u1EDDi! B\u1EA1n b\u1EAFt tay
+      v\xE0o chu\u1EA9n b\u1ECB."
+    nextBranch: {fileID: 0}

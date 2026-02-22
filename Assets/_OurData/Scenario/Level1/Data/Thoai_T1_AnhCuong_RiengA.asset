@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2eab4a3faaa6134d89cbb71d1d5a509, type: 3}
+  m_Name: Thoai_T1_AnhCuong_RiengA
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speaker: {fileID: 11400000, guid: 01ed37436cc08f844852114d42b0854a, type: 2}
+    content: "N\u1EBFu em ch\u1ECDn b\xE1nh d\xE1t v\xE0ng, th\xEC 'gi\xE1 tr\u1ECB
+      s\u1EED d\u1EE5ng' hay c\xF2n g\u1ECDi l\xE0 c\xF4ng d\u1EE5ng th\u1ECFa m\xE3n
+      nhu c\u1EA7u c\u1EE7a n\xF3 kh\xF4ng ph\xF9 h\u1EE3p v\u1EDBi nhu c\u1EA7u
+      thi\u1EBFt th\u1EF1c c\u1EE7a s\u1ED1 \u0111\xF4ng sinh vi\xEAn l\xE0 \u0103n
+      no."
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: -8867039835611936239, guid: 69d63b7a19f6e5e409f3ed63fbb646a5, type: 3}
+      CharacterSprite: {fileID: -2059324002, guid: 65d3e720b3ab7ec4b9d9c4b4277ba738, type: 3}
+      CharacterAnimTrigger: 

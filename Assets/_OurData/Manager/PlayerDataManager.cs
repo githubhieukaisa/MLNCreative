@@ -54,7 +54,6 @@ public class PlayerDataManager : TeamBehaviour
         if (type != StatType.Capital && newValue < 0) newValue = 0;
 
         SetStat(type, newValue);
-
         Debug.Log($"Stat Modified: {type} changed by {amount}. New Value: {newValue}");
     }
 }
