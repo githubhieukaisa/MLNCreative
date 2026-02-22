@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3880a69df5eefa46a96a60fd9ad702e, type: 3}
-  m_Name: LevelData_T1_Main
+  m_Name: LevelData_T2_LoopA
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  levelName: LevelData_T1_Main
+  levelName: LevelData_T2_LoopA
   steps:
-  - {fileID: 11400000, guid: acbf90478119a9b4bba21f8d98c36661, type: 2}
-  - {fileID: 11400000, guid: 0a1cdafd1671f814b98648832edd2c9c, type: 2}
+  - {fileID: 11400000, guid: 794a0f380910d654b8e66994e7ed7992, type: 2}
+  - {fileID: 11400000, guid: 724b725b71b33f14397bcbcfe3656025, type: 2}

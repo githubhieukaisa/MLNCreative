@@ -14,11 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   lines:
   - speaker: {fileID: 11400000, guid: 01ed37436cc08f844852114d42b0854a, type: 2}
-    content: "Anh v\u1EEBa \u0111\u1ECDc Confession! Em b\xE1n h\xE0ng \xF4i thiu
-      l\xE0 ph\xE1 h\u1EE7y 'gi\xE1 tr\u1ECB s\u1EED d\u1EE5ng'. D\u1EB9p ngay t\u01B0
-      t\u01B0\u1EDFng ch\u1ED9p gi\u1EADt n\xE0y!"
+    content: "Anh v\u1EEBa \u0111\u1ECDc Confession. Xe b\xE1nh m\xEC c\u1EE7a em
+      \u0111ang b\u1ECB t\u1EA9y chay to\xE0n t\u1EADp r\u1ED3i k\xECa. L\xEAn ph\u01B0\u1EDDng
+      n\u1ED9p ph\u1EA1t an to\xE0n th\u1EF1c ph\u1EA9m ch\u01B0a?"
     voiceClipOverride: {fileID: 0}
     lineVisualState:
       BackgroundSprite: {fileID: 0}
       CharacterSprite: {fileID: -217934053373611831, guid: 27ca4e0b2d0ae2643b16e6d9d8c7d525, type: 3}
       CharacterAnimTrigger: Shake
+  - speaker: {fileID: 11400000, guid: 01ed37436cc08f844852114d42b0854a, type: 2}
+    content: "Kinh doanh ch\u1ED9p gi\u1EADt! Em b\xE1n h\xE0ng \xF4i thiu l\xE0
+      t\u1EF1 tay ph\xE1 h\u1EE7y 'gi\xE1 tr\u1ECB s\u1EED d\u1EE5ng' c\u1EE7a h\xE0ng
+      h\xF3a. Kh\xF4ng th\u1ECFa m\xE3n \u0111\u01B0\u1EE3c nhu c\u1EA7u an to\xE0n
+      c\u1EE7a ng\u01B0\u1EDDi ta th\xEC l\xE0m g\xEC c\xF2n ai th\xE8m trao \u0111\u1ED5i
+      mua b\xE1n n\u1EEFa?"
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 0}
+      CharacterSprite: {fileID: 0}
+      CharacterAnimTrigger: 
+  - speaker: {fileID: 11400000, guid: 01ed37436cc08f844852114d42b0854a, type: 2}
+    content: "D\u1EB9p ngay t\u01B0 t\u01B0\u1EDFng n\xE0y, b\u1ED3i th\u01B0\u1EDDng
+      cho sinh vi\xEAn v\xE0 l\xE0m l\u1EA1i \u0111\xE0ng ho\xE0ng cho anh!"
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 0}
+      CharacterSprite: {fileID: 0}
+      CharacterAnimTrigger: 

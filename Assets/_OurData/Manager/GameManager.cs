@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : TeamBehaviour
@@ -15,6 +16,13 @@ public class GameManager : TeamBehaviour
     private LevelData _currentLevel;
     private LevelData _pendingBranch;
 
+    private struct SequenceState
+    {
+        public LevelData level;
+        public int index;
+    }
+    private Stack<SequenceState> _sequenceStack = new Stack<SequenceState>();
+
     protected override void Awake()
     {
         base.Awake();
@@ -26,6 +34,9 @@ public class GameManager : TeamBehaviour
 
     private void Start()
     {
+        if (_startingLevel == null || _startingLevel.steps.Count == 0) return;
+
+        _sequenceStack.Clear();
         LoadSequence(_startingLevel);
     }
 
@@ -42,20 +53,32 @@ public class GameManager : TeamBehaviour
         PlayCurrentStep();
     }
 
-    private void StartGame()
-    {
-        if (_startingLevel == null || _startingLevel.steps.Count == 0) return;
-
-        _currentStepIndex = 0;
-        PlayCurrentStep();
-    }
-
     private void PlayCurrentStep()
     {
         if (_currentStepIndex >= _currentLevel.steps.Count)
         {
-            Debug.Log("HẾT CHƯƠNG 1!");
-            return; // Ở đây sau này có thể load level tiếp theo
+            // Nếu đang ở màn Game Over thì dừng hẳn, không quay về nữa
+            if (_currentLevel == _gameOverLevelData)
+            {
+                Debug.Log("TRÒ CHƠI KẾT THÚC (PHÁ SẢN)!");
+                OnGameEnded?.Invoke(false);
+                return;
+            }
+
+            // Nếu trong Stack còn trí nhớ -> Trở về nhánh chính
+            if (_sequenceStack.Count > 0)
+            {
+                SequenceState prevState = _sequenceStack.Pop();
+                _currentLevel = prevState.level;
+                _currentStepIndex = prevState.index;
+
+                PlayCurrentStep(); // Chạy tiếp bước kế tiếp của nhánh chính
+                return;
+            }
+
+            Debug.Log("HẾT CỐT TRUYỆN!");
+            OnGameEnded?.Invoke(true);
+            return;
         }
 
         ScenarioStep step = _currentLevel.steps[_currentStepIndex];
@@ -133,6 +156,13 @@ public class GameManager : TeamBehaviour
         if (_pendingBranch != null)
         {
             Debug.Log($"Rẽ nhánh sang kịch bản: {_pendingBranch.levelName}");
+
+            _sequenceStack.Push(new SequenceState
+            {
+                level = _currentLevel,
+                index = _currentStepIndex + 1
+            });
+
             LevelData branchToLoad = _pendingBranch;
             _pendingBranch = null;
 

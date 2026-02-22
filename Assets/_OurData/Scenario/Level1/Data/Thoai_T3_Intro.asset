@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2eab4a3faaa6134d89cbb71d1d5a509, type: 3}
+  m_Name: Thoai_T3_Intro
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speaker: {fileID: 11400000, guid: c5049c5e0ff317d459948ede9e91b663, type: 2}
+    content: "Tr\u1EDDi \u01A1i, gi\u1EDD tan t\u1EA7m \u0111\xF4ng kh\xE1ch qu\xE1!
+      H\xE0ng ng\u01B0\u1EDDi x\u1EBFp d\xE0i t\xEDt t\u1EAFp \u0111\u1EBFn t\u1EADn
+      c\u1ED5ng k\xFD t\xFAc x\xE1 r\u1ED3i. M\xECnh ph\u1EA3i x\u1EED l\xFD sao
+      cho k\u1ECBp \u0111\xE2y?"
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: -6835384951939328593, guid: cf31f5778123b2245b3e4710f2190ea8, type: 3}
+      CharacterSprite: {fileID: 6521387171199294658, guid: 3292b8b760bb73344bff8c77f7cf1f82, type: 3}
+      CharacterAnimTrigger: 

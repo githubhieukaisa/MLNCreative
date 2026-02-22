@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea60b411c9a18c4980249e287142770, type: 3}
+  m_Name: Step_T3_02_Question
+  m_EditorClassIdentifier: Assembly-CSharp::QuestionStep
+  questionText: "Gi\u1EDD ph\u1EA3i x\u1EED l\xFD t\u1EEBng \u1ED5 b\xE1nh m\xEC
+    nh\u01B0 th\u1EBF n\xE0o khi kh\xE1ch \u0111\xF4ng?"
+  optionA:
+    text: "C\u1EAFt t\u1EC9a c\u1EE7 c\u1EA3i th\xE0nh h\xECnh hoa sen, x\u1EBFp
+      th\u1ECBt th\xE0nh h\xECnh ng\xF4i sao. Ch\u0103m ch\xFAt 10 ph\xFAt m\u1EDBi
+      xong 1 \u1ED5."
+    capitalChange: -500000
+    brandChange: 30
+    techChange: 20
+    feedback: "B\xE1nh qu\xE1 \u0111\u1EB9p, N\u1EEF sinh ch\u1EE5p \u1EA3nh check-in.
+      Nh\u01B0ng h\xE0ng ng\u01B0\u1EDDi \u0111\u1EE3i d\xE0i 2km, kh\xE1ch ph\xEDa
+      sau b\u1ECF \u0111i h\u1EBFt v\xEC tr\u1EC5 gi\u1EDD h\u1ECDc."
+    nextBranch: {fileID: 11400000, guid: 2e2ae454de5b47e479f765f386754754, type: 2}
+  optionB:
+    text: "L\xE0m \u0111\u1EA1i kh\xE1i, nh\xE9t b\u1EEBa th\u1ECBt v\xE0 rau, r\u01B0\u1EDBi
+      s\u1ED1t lem nhem r\u1EDBt c\u1EA3 ra ngo\xE0i \u0111\u1EC3 b\xE1n cho nhanh
+      l\u1EA5y ti\u1EC1n."
+    capitalChange: 1000000
+    brandChange: -60
+    techChange: -10
+    feedback: "B\xE1n c\u1EF1c nhanh, thu b\u1ED9n ti\u1EC1n. Nh\u01B0ng Nam sinh
+      c\u1EAFn m\u1ED9t mi\u1EBFng, x\u1ED1t b\u1EAFn b\u1EA9n h\u1EBFt \xE1o s\u01A1
+      mi tr\u1EAFng, quay l\u1EA1i ch\u1EEDi \u1EA7m \u0129."
+    nextBranch: {fileID: 11400000, guid: a356f944bbe137f41ab1b7ffc507b38b, type: 2}
+  optionC:
+    text: "L\xE0m thao t\xE1c d\u1EE9t kho\xE1t, g\u1ECDn g\xE0ng, \u0111\u1EA3m
+      b\u1EA3o \u0111\u1ECBnh l\u01B0\u1EE3ng \u0111\u1EC1u nhau, 1 ph\xFAt/\u1ED5."
+    capitalChange: 500000
+    brandChange: 15
+    techChange: 10
+    feedback: "Kh\xE1ch h\xE0ng h\xE0i l\xF2ng, t\u1ED1c \u0111\u1ED9 quay v\xF2ng
+      v\u1ED1n \u1ED5n \u0111\u1ECBnh."
+    nextBranch: {fileID: 0}

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2eab4a3faaa6134d89cbb71d1d5a509, type: 3}
+  m_Name: Thoai_T3_AnhCuong_B
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speaker: {fileID: 11400000, guid: 01ed37436cc08f844852114d42b0854a, type: 2}
+    content: "Em l\u1EA1i \u0111i v\xE0o v\u1EBFt xe \u0111\u1ED5 ng\u01B0\u1EE3c
+      l\u1EA1i r\u1ED3i. Em ch\u1EC9 ch\u0103m ch\u0103m v\u01A1 v\xE9t 'Lao \u0111\u1ED9ng
+      tr\u1EEBu t\u01B0\u1EE3ng' \u0111\u1EC3 t\u0103ng l\u1EE3i nhu\u1EADn nhanh
+      nh\u1EA5t..."
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: -217934053373611831, guid: 27ca4e0b2d0ae2643b16e6d9d8c7d525, type: 3}
+      CharacterSprite: {fileID: 0}
+      CharacterAnimTrigger: Sigh
+  - speaker: {fileID: 11400000, guid: 01ed37436cc08f844852114d42b0854a, type: 2}
+    content: "Nh\u01B0ng em l\xE0m c\u1EA9u th\u1EA3, t\u1EE9c l\xE0 em ph\xE1 h\u1EE7y
+      'Lao \u0111\u1ED9ng c\u1EE5 th\u1EC3' - c\xE1i t\u1EA1o ra ch\u1EA5t l\u01B0\u1EE3ng
+      s\u1EA3n ph\u1EA9m. Kh\xF4ng ai mua h\xE0ng c\u1EE7a em l\u1EA7n th\u1EE9 hai
+      \u0111\xE2u!"
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 0}
+      CharacterSprite: {fileID: 0}
+      CharacterAnimTrigger: 
+  - speaker: {fileID: 11400000, guid: 01ed37436cc08f844852114d42b0854a, type: 2}
+    content: "Ph\u1EA3i c\xE2n b\u1EB1ng c\u1EA3 hai m\u1EB7t c\u1EE7a lao \u0111\u1ED9ng:
+      L\xE0m b\xE1nh ngon nh\u01B0ng ph\u1EA3i t\u1ED1i \u01B0u th\u1EDDi gian! Tr\u1EA3
+      ti\u1EC1n \u0111\u1EC1n c\xE1i \xE1o cho ng\u01B0\u1EDDi ta r\u1ED3i l\xE0m
+      l\u1EA1i \u0111i!"
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 0}
+      CharacterSprite: {fileID: 0}
+      CharacterAnimTrigger: 

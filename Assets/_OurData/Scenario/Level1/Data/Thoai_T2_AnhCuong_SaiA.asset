@@ -21,12 +21,32 @@ MonoBehaviour:
       CharacterSprite: {fileID: 5703871548070424986, guid: 8039e3c904124844590a3184b89e5bae, type: 3}
       CharacterAnimTrigger: 
   - speaker: {fileID: 11400000, guid: 01ed37436cc08f844852114d42b0854a, type: 2}
-    content: "Tr\u1EDDi \u0111\u1EA5t \u01A1i, c\xE1i b\u1EBFp c\xF3 kh\xE1c g\xEC
-      b\xE3i chi\u1EBFn tr\u01B0\u1EDDng kh\xF4ng? Em qu\xEAn s\u1EA3n xu\u1EA5t
-      h\xE0ng h\xF3a c\u1EA7n 'Ph\xE2n c\xF4ng lao \u0111\u1ED9ng x\xE3 h\u1ED9i'
-      \xE0?"
+    content: "Tr\u1EDDi \u0111\u1EA5t \u01A1i, nh\xECn c\xE1i b\u1EBFp tr\u1ECD c\u1EE7a
+      em c\xF3 kh\xE1c g\xEC b\xE3i chi\u1EBFn tr\u01B0\u1EDDng kh\xF4ng? M\u1EAFt
+      th\xEC th\xE2m nh\u01B0 g\u1EA5u tr\xFAc!"
     voiceClipOverride: {fileID: 0}
     lineVisualState:
       BackgroundSprite: {fileID: 0}
       CharacterSprite: {fileID: -217934053373611831, guid: 27ca4e0b2d0ae2643b16e6d9d8c7d525, type: 3}
       CharacterAnimTrigger: Shake
+  - speaker: {fileID: 11400000, guid: 01ed37436cc08f844852114d42b0854a, type: 2}
+    content: "Em qu\xEAn \u0111i\u1EC1u ki\u1EC7n ra \u0111\u1EDDi c\u1EE7a s\u1EA3n
+      xu\u1EA5t h\xE0ng h\xF3a l\xE0 'Ph\xE2n c\xF4ng lao \u0111\u1ED9ng x\xE3 h\u1ED9i'
+      \xE0? X\xE3 h\u1ED9i chia ra th\u1EE3 l\xE0m b\xE1nh, ti\u1EC3u th\u01B0\u01A1ng
+      b\xE1n th\u1ECBt, n\xF4ng d\xE2n tr\u1ED3ng rau... l\xE0 \u0111\u1EC3 chuy\xEAn
+      m\xF4n h\xF3a, t\u0103ng n\u0103ng su\u1EA5t."
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 0}
+      CharacterSprite: {fileID: -217934053373611831, guid: 27ca4e0b2d0ae2643b16e6d9d8c7d525, type: 3}
+      CharacterAnimTrigger: 
+  - speaker: {fileID: 11400000, guid: 01ed37436cc08f844852114d42b0854a, type: 2}
+    content: "Em \u0111\xF2i t\u1EF1 l\xE0m t\u1EEB A-Z th\xEC em \u0111ang \u0111i
+      l\xF9i v\u1EC1 th\u1EDDi k\u1EF3 kinh t\u1EBF 't\u1EF1 c\u1EA5p t\u1EF1 t\xFAc'
+      r\u1ED3i! Ph\u1EA3i bi\u1EBFt li\xEAn k\u1EBFt v\xE0 m\u01B0\u1EE3n l\u1EF1c
+      c\u1EE7a ng\u01B0\u1EDDi kh\xE1c, hi\u1EC3u ch\u01B0a?"
+    voiceClipOverride: {fileID: 0}
+    lineVisualState:
+      BackgroundSprite: {fileID: 0}
+      CharacterSprite: {fileID: -217934053373611831, guid: 27ca4e0b2d0ae2643b16e6d9d8c7d525, type: 3}
+      CharacterAnimTrigger: 

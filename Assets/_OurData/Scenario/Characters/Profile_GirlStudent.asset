@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 083cdb8ea8a6dd140b235e02f66b5a20, type: 3}
+  m_Name: Profile_GirlStudent
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterProfileSO
+  characterName: GirlStudent
+  defaultIcon: {fileID: -6457970801446557378, guid: 8c4a3ff07e48b3e4d856cf6f653a70b6, type: 3}
+  defaultVoice: {fileID: 0}
