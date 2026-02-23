@@ -9,28 +9,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: fa159bb6f5f96dc439697ff888860bb0, type: 3}
   m_Name: SFXData_SO
   m_EditorClassIdentifier: Assembly-CSharp:Core.Audio:SFXDatabaseSO
   _tracks:
   - type: 1
-    clip: {fileID: 8300000, guid: 922efe63b78cccd4cb6bd608feaac8e5, type: 3}
-    volumeScale: 0.5
+    clip: {fileID: 8300000, guid: cbf7813484fc93c41b63b33d183ef197, type: 3}
+    volumeScale: 1
   - type: 2
-    clip: {fileID: 8300000, guid: e50ddf637a131d04ea741118f77ce384, type: 3}
-    volumeScale: 0.5
+    clip: {fileID: 8300000, guid: 6e02fe7db356e064fa9d26279c32fed7, type: 3}
+    volumeScale: 1
   - type: 3
-    clip: {fileID: 8300000, guid: d6153fb9b32c8434ea3a692acc65da74, type: 3}
-    volumeScale: 0.5
+    clip: {fileID: 8300000, guid: e8eeda13c9d334a478d9545e5ded5498, type: 3}
+    volumeScale: 1
   - type: 4
-    clip: {fileID: 8300000, guid: d6153fb9b32c8434ea3a692acc65da74, type: 3}
-    volumeScale: 0.5
+    clip: {fileID: 8300000, guid: e8eeda13c9d334a478d9545e5ded5498, type: 3}
+    volumeScale: 1
   - type: 5
-    clip: {fileID: 8300000, guid: e5aeee6e16690504a979c5cd23fdcce6, type: 3}
-    volumeScale: 0.5
+    clip: {fileID: 8300000, guid: 696acfaefa1f93541a0063486b23a307, type: 3}
+    volumeScale: 1
   - type: 6
-    clip: {fileID: 8300000, guid: 24931247ec792c141981a84e6ab319b0, type: 3}
-    volumeScale: 0.5
+    clip: {fileID: 8300000, guid: 1f09f887406bed6479f445b56d7e6d43, type: 3}
+    volumeScale: 1
   - type: 7
-    clip: {fileID: 8300000, guid: 1b91cd396833d474a838e3c2c8cd65e3, type: 3}
-    volumeScale: 0.5
+    clip: {fileID: 8300000, guid: bbcacea3b0f4f58488190a7739cb2e50, type: 3}
+    volumeScale: 1

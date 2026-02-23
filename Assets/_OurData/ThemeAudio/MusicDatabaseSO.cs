@@ -49,7 +49,5 @@ namespace Core.Audio
     [CreateAssetMenu(fileName = "MusicDatabase", menuName = "KinhTeChinhTri/Audio/MusicDatabase")]
     public class MusicDatabaseSO : AudioLibrarySO<MusicType> { }
 
-    // Định nghĩa SFXDatabase (Tạo trong Editor)
-    [CreateAssetMenu(fileName = "SFXDatabase", menuName = "KinhTeChinhTri/Audio/SFXDatabase")]
-    public class SFXDatabaseSO : AudioLibrarySO<SFXType> { }
+
 }

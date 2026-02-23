@@ -1,3 +1,4 @@
+using Core.Audio;
 using UnityEngine;
 using UnityEngine.SceneManagement; // Bắt buộc để chuyển cảnh
 using UnityEngine.UI; // Bắt buộc để dùng Button
@@ -18,6 +19,8 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private GameObject panelOptions; // Cái Panel Options vừa tạo
     [SerializeField] private Button btnBackFromOptions; // Nút Back/Close trong Options
 
+    private bool _hasPlayedMenuMusic = false;
+
     private void Awake()
     {
         // 1. Đảm bảo trạng thái ban đầu: Hiện Menu, Ẩn Options
@@ -34,6 +37,19 @@ public class MainMenuController : MonoBehaviour
     }
 
     // --- LOGIC XỬ LÝ ---
+    private void Update()
+    {
+        // MẸO CHO WEBGL: Chờ người chơi click chuột lần đầu tiên ở bất kỳ đâu trên màn hình
+        // thì lập tức mở khóa và phát nhạc Main Menu!
+        if (!_hasPlayedMenuMusic && Input.GetMouseButtonDown(0))
+        {
+            _hasPlayedMenuMusic = true;
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayMusic(MusicType.MainMenu);
+            }
+        }
+    }
 
     private void OnStartClicked()
     {

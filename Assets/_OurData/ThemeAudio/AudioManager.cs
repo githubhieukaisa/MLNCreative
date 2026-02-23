@@ -90,16 +90,16 @@ namespace Core.Audio
             if (_lowPassFilter != null) _lowPassFilter.cutoffFrequency = _normalCutoff;
         }
 
-        private void Start()
-        {
-            StartCoroutine(StartMusicDelayed());
-        }
+        // private void Start()
+        // {
+        //     StartCoroutine(StartMusicDelayed());
+        // }
 
-        private IEnumerator StartMusicDelayed()
-        {
-            yield return null;
-            PlayMusic(MusicType.MainMenu);
-        }
+        // private IEnumerator StartMusicDelayed()
+        // {
+        //     yield return null;
+        //     PlayMusic(MusicType.MainMenu);
+        // }
 
         /// <summary>
         /// Phát nhạc nền với hiệu ứng Crossfade mượt mà
