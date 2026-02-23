@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Profile_Nam
   m_EditorClassIdentifier: Assembly-CSharp::CharacterProfileSO
   characterName: Nam
-  defaultIcon: {fileID: 1638186758502487609, guid: c77e133e8a475d340972cb1ef304c341, type: 3}
+  defaultIcon: {fileID: 457314247, guid: c77e133e8a475d340972cb1ef304c341, type: 3}
   defaultVoice: {fileID: 0}

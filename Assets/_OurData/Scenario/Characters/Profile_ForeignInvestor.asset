@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Profile_ForeignInvestor
   m_EditorClassIdentifier: Assembly-CSharp::CharacterProfileSO
   characterName: Foreign Investor
-  defaultIcon: {fileID: -5941849293895261803, guid: 42f467d118555c249b110fed4fb319d5, type: 3}
+  defaultIcon: {fileID: 1840332146, guid: 42f467d118555c249b110fed4fb319d5, type: 3}
   defaultVoice: {fileID: 0}

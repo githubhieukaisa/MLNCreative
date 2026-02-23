@@ -29,7 +29,7 @@ MonoBehaviour:
     text: "Ch\u1EA5p nh\u1EADn \u0111au v\xED! K\xFD h\u1EE3p \u0111\u1ED3ng v\u1EDBi
       l\xF2 b\xE1nh m\xEC ngon nh\u1EA5t, d\u1EADy t\u1EEB 4h s\xE1ng ra ch\u1EE3
       \u0111\u1EA7u m\u1ED1i nh\u1EB7t t\u1EEBng m\u1EDB rau."
-    capitalChange: -1500000
+    capitalChange: -1000000
     brandChange: 20
     techChange: 5
     feedback: "4h s\xE1ng l\u1EA1nh c\u1EAFt da c\u1EAFt th\u1ECBt, ti\u1EC1n v\u1ED1n

@@ -20,7 +20,7 @@ MonoBehaviour:
       b\u1EA5m \u0111i\u1EC7n tho\u1EA1i, c\u1EA5m ng\u1ED3i ngh\u1EC9, tr\u1EA3
       th\xEAm m\u1ED9t t\xED ti\u1EC1n c\xF2m (GTTD tuy\u1EC7t \u0111\u1ED1i)."
     capitalChange: 2000000
-    brandChange: -80
+    brandChange: -40
     techChange: 0
     feedback: "Ti\u1EC1n \u0111\u1ED5 v\u1EC1 \u1EA7m \u1EA7m! B\u1EA1n b\xF3c l\u1ED9t
       tri\u1EC7t \u0111\u1EC3 s\u1EE9c lao \u0111\u1ED9ng c\u1EE7a Nam. Nh\u01B0ng
@@ -31,7 +31,7 @@ MonoBehaviour:
     text: "L\xE0m ng\u01B0\u1EDDi t\u1ED1t: Tr\u1EA3 cho Nam to\xE0n b\u1ED9 s\u1ED1
       ti\u1EC1n l\xE3i t\u1EEB nh\u1EEFng \u1ED5 b\xE1nh do Nam l\xE0m ra, m\xECnh
       kh\xF4ng gi\u1EEF l\u1EA1i \u0111\u1ED3ng n\xE0o cho c\xF4ng b\u1EB1ng."
-    capitalChange: -3000000
+    capitalChange: -2000000
     brandChange: 50
     techChange: 0
     feedback: "Nam t\xF4n b\u1EA1n l\xE0m Idol. B\u1EA1n c\u1EA3m th\u1EA5y t\xE2m
@@ -42,7 +42,7 @@ MonoBehaviour:
     text: "\u0110\u1EA7u t\u01B0 c\xF4ng ngh\u1EC7: Mua m\xE1y \xE9p b\xE1nh si\xEAu
       t\u1ED1c. Nam v\u1EABn l\xE0m 6 ti\u1EBFng, nh\xE0n h\u01A1n nh\u01B0ng \xE9p
       ra b\xE1nh g\u1EA5p 3 l\u1EA7n (GTTD t\u01B0\u01A1ng \u0111\u1ED1i)."
-    capitalChange: -1000000
+    capitalChange: 3000000
     brandChange: 15
     techChange: 30
     feedback: "D\xF9 t\u1ED1n v\u1ED1n mua m\xE1y, nh\u01B0ng Nam l\xE0m vi\u1EC7c

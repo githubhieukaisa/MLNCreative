@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Profile_BoyStudent
   m_EditorClassIdentifier: Assembly-CSharp::CharacterProfileSO
   characterName: BoyStudent
-  defaultIcon: {fileID: 1940950003555235107, guid: ae72034a507c15a49bd517f644992404, type: 3}
+  defaultIcon: {fileID: -1871355270, guid: ae72034a507c15a49bd517f644992404, type: 3}
   defaultVoice: {fileID: 0}

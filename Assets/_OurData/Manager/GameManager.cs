@@ -80,7 +80,7 @@ public class GameManager : TeamBehaviour
 
             if (_currentChapterIndex < _chapters.Count)
             {
-                Debug.Log($"--- BẮT ĐẦU CHƯƠNG {_currentChapterIndex + 1} ---");
+                // Debug.Log($"--- BẮT ĐẦU CHƯƠNG {_currentChapterIndex + 1} ---");
                 _sequenceStack.Clear(); // Xóa sạch trí nhớ cũ cho an toàn
                 LoadSequence(_chapters[_currentChapterIndex]); // Tự động chạy Chương tiếp theo
                 return;
@@ -88,7 +88,7 @@ public class GameManager : TeamBehaviour
             else
             {
                 // Đã chạy qua hết tất cả các chương trong List
-                Debug.Log("CHÚC MỪNG! BẠN ĐÃ PHÁ ĐẢO TOÀN BỘ GAME!");
+                // Debug.Log("CHÚC MỪNG! BẠN ĐÃ PHÁ ĐẢO TOÀN BỘ GAME!");
                 OnGameEnded?.Invoke(true);
                 return;
             }
@@ -167,7 +167,7 @@ public class GameManager : TeamBehaviour
     {
         if (_pendingBranch != null)
         {
-            Debug.Log($"Rẽ nhánh sang kịch bản: {_pendingBranch.levelName}");
+            // Debug.Log($"Rẽ nhánh sang kịch bản: {_pendingBranch.levelName}");
 
             _sequenceStack.Push(new SequenceState
             {

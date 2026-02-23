@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Profile_ForeignCustomer
   m_EditorClassIdentifier: Assembly-CSharp::CharacterProfileSO
   characterName: Foreign Customer
-  defaultIcon: {fileID: -8272560168220028574, guid: 0569914269af94d469837caba575b92e, type: 3}
+  defaultIcon: {fileID: 631915131, guid: 0569914269af94d469837caba575b92e, type: 3}
   defaultVoice: {fileID: 0}
